@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21BB04DA49594452AD5EE0BF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385FF3CC3C6A49D5B285D5B1 /* libPods.a */; };
 		7A42278917EE10FC00E90387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278817EE10FC00E90387 /* Foundation.framework */; };
 		7A42278B17EE10FC00E90387 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278A17EE10FC00E90387 /* CoreGraphics.framework */; };
 		7A42278D17EE10FC00E90387 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278C17EE10FC00E90387 /* UIKit.framework */; };
@@ -21,6 +22,10 @@
 		7A4227B417EE10FC00E90387 /* Word_RecallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227B317EE10FC00E90387 /* Word_RecallTests.m */; };
 		7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C117EE122100E90387 /* ATArchivableObject.m */; };
 		7A4227C617EE125500E90387 /* WRCWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C517EE125500E90387 /* WRCWord.m */; };
+		7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D617EE14D700E90387 /* GOOWordInfo.m */; };
+		7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */; };
+		7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */; };
+		7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		385FF3CC3C6A49D5B285D5B1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		67DC83C38CD14CFB926836F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		7A42278517EE10FC00E90387 /* Word Recall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Recall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A42278817EE10FC00E90387 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A42278A17EE10FC00E90387 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,6 +61,14 @@
 		7A4227C117EE122100E90387 /* ATArchivableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArchivableObject.m; sourceTree = "<group>"; };
 		7A4227C417EE125500E90387 /* WRCWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWord.h; sourceTree = "<group>"; };
 		7A4227C517EE125500E90387 /* WRCWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWord.m; sourceTree = "<group>"; };
+		7A4227D517EE14D700E90387 /* GOOWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfo.h; sourceTree = "<group>"; };
+		7A4227D617EE14D700E90387 /* GOOWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordInfo.m; sourceTree = "<group>"; };
+		7A4227D717EE14D700E90387 /* GOOWordInfoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfoSearch.h; sourceTree = "<group>"; };
+		7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordInfoSearch.m; sourceTree = "<group>"; };
+		7AF0583217EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATAFJSONPResponseSerializer.h; sourceTree = "<group>"; };
+		7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAFJSONPResponseSerializer.m; sourceTree = "<group>"; };
+		7AF0583517EE1F8800BEADD1 /* GOOJSONPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOJSONPResponseSerializer.h; sourceTree = "<group>"; };
+		7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOJSONPResponseSerializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +79,7 @@
 				7A42278B17EE10FC00E90387 /* CoreGraphics.framework in Frameworks */,
 				7A42278D17EE10FC00E90387 /* UIKit.framework in Frameworks */,
 				7A42278917EE10FC00E90387 /* Foundation.framework in Frameworks */,
+				21BB04DA49594452AD5EE0BF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +103,7 @@
 				7A4227AD17EE10FC00E90387 /* Word RecallTests */,
 				7A42278717EE10FC00E90387 /* Frameworks */,
 				7A42278617EE10FC00E90387 /* Products */,
+				67DC83C38CD14CFB926836F0 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +123,7 @@
 				7A42278A17EE10FC00E90387 /* CoreGraphics.framework */,
 				7A42278C17EE10FC00E90387 /* UIKit.framework */,
 				7A4227A717EE10FC00E90387 /* XCTest.framework */,
+				385FF3CC3C6A49D5B285D5B1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,6 +135,7 @@
 				7A42279817EE10FC00E90387 /* WRCAppDelegate.m */,
 				7A4227BE17EE122100E90387 /* Generic */,
 				7A4227C317EE124300E90387 /* Model */,
+				7A4227D417EE14D700E90387 /* Google Dictionary API */,
 				7A4227A017EE10FC00E90387 /* Images.xcassets */,
 				7A42278F17EE10FC00E90387 /* Supporting Files */,
 			);
@@ -156,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4227BF17EE122100E90387 /* Classes */,
+				7AF0583817EE2BC300BEADD1 /* Categories */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -165,6 +185,8 @@
 			children = (
 				7A4227C017EE122100E90387 /* ATArchivableObject.h */,
 				7A4227C117EE122100E90387 /* ATArchivableObject.m */,
+				7AF0583217EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.h */,
+				7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -178,6 +200,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7A4227D417EE14D700E90387 /* Google Dictionary API */ = {
+			isa = PBXGroup;
+			children = (
+				7A4227D517EE14D700E90387 /* GOOWordInfo.h */,
+				7A4227D617EE14D700E90387 /* GOOWordInfo.m */,
+				7A4227D717EE14D700E90387 /* GOOWordInfoSearch.h */,
+				7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */,
+				7AF0583517EE1F8800BEADD1 /* GOOJSONPResponseSerializer.h */,
+				7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */,
+			);
+			path = "Google Dictionary API";
+			sourceTree = "<group>";
+		};
+		7AF0583817EE2BC300BEADD1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A4227B717EE10FC00E90387 /* Build configuration list for PBXNativeTarget "Word Recall" */;
 			buildPhases = (
+				18449FCBF3C3417EAC9CB242 /* Check Pods Manifest.lock */,
 				7A42278117EE10FC00E90387 /* Sources */,
 				7A42278217EE10FC00E90387 /* Frameworks */,
 				7A42278317EE10FC00E90387 /* Resources */,
+				8A1B081BC9FE40E4A3F87B05 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,15 +314,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18449FCBF3C3417EAC9CB242 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		8A1B081BC9FE40E4A3F87B05 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A42278117EE10FC00E90387 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */,
+				7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */,
 				7A4227C617EE125500E90387 /* WRCWord.m in Sources */,
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
+				7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */,
 				7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */,
 				7A42279917EE10FC00E90387 /* WRCAppDelegate.m in Sources */,
+				7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +473,7 @@
 		};
 		7A4227B817EE10FC00E90387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DC83C38CD14CFB926836F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -407,6 +487,7 @@
 		};
 		7A4227B917EE10FC00E90387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DC83C38CD14CFB926836F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -479,6 +560,7 @@
 				7A4227B917EE10FC00E90387 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A4227BA17EE10FC00E90387 /* Build configuration list for PBXNativeTarget "Word RecallTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +569,7 @@
 				7A4227BC17EE10FC00E90387 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
