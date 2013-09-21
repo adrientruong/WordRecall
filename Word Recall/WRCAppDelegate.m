@@ -7,13 +7,121 @@
 //
 
 #import "WRCAppDelegate.h"
+#import "GOOWordInfoSearch.h"
+#import "GOOWordInfo.h"
+#import "ATObjectStore.h"
+#import "NSURL+SystemDirectories.h"
+#import "WRCWordInfo.h"
+
+@interface WRCAppDelegate ()
+
+@property (nonatomic, strong) NSMutableArray *wordInfoSearches;
+
+@end
 
 @implementation WRCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window.rootViewController = [[UIViewController alloc] init];
+    
+    __weak WRCAppDelegate *weakSelf = self;
+    
+    [self addNewWordsIfNeccessaryWithCompletionHandler:^{
+       
+        for (WRCWordInfo *wordInfo in [[weakSelf wordStore] objects]) {
+            
+            NSLog(@"%@:%@", wordInfo.word, wordInfo.definition);
+            
+        }
+        
+    }];
+    
     return YES;
+    
+}
+
+- (ATObjectStore *)wordStore
+{
+    
+    NSURL *wordStoreURL = [[NSURL documentsDirectoryURL] URLByAppendingPathComponent:@"WordStore"];
+
+    ATObjectStore *wordStore = [ATObjectStore sharedObjectStoreWithURL:wordStoreURL createAndRegisterIfNeeded:YES];
+
+    return wordStore;
+    
+}
+
+- (void)addNewWordsIfNeccessaryWithCompletionHandler:(void (^) (void))completionHandler;
+{
+    
+    ATObjectStore *wordStore = [self wordStore];
+    
+    NSString *wordListPath = [[NSBundle mainBundle] pathForResource:@"WRCWordList" ofType:@"plist"];
+    
+    NSArray *wordList = [NSArray arrayWithContentsOfFile:wordListPath];
+    
+    __block NSInteger completions = 0;
+    NSInteger neededCompletions = [wordList count];
+    
+    self.wordInfoSearches = [NSMutableArray array];
+    
+    for (NSString *word in wordList) {
+                
+        WRCWordInfo *wordInfo = [[WRCWordInfo alloc] init];
+        
+        NSMutableArray *words = [[word componentsSeparatedByString:@", "] mutableCopy];
+        
+        wordInfo.word = words[0];
+        
+        [words removeObjectAtIndex:0];
+        
+        wordInfo.synonyms = words;
+        
+        if ([wordStore containsObject:wordInfo] == NO) {
+            
+            GOOWordInfoSearch *search = [[GOOWordInfoSearch alloc] initWithWord:wordInfo.word];
+            
+            [search startWithCompletionHandler:^(GOOWordInfo *googleWordInfo, NSError *error) {
+                
+                wordInfo.definition = googleWordInfo.definition;
+                
+                [wordStore addObject:wordInfo];
+                
+                completions++;
+                
+                if (completions == neededCompletions) {
+                    
+                    self.wordInfoSearches = nil;
+
+                    completionHandler();
+                    
+                }
+                
+            }];
+            
+            [self.wordInfoSearches addObject:search];
+            
+        }
+        else {
+            
+            completions++;
+            
+            if (completions == neededCompletions) {
+                
+                self.wordInfoSearches = nil;
+
+                completionHandler();
+                
+            }
+            
+        }
+        
+    }
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -21,11 +21,14 @@
 		7A4227B217EE10FC00E90387 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4227B017EE10FC00E90387 /* InfoPlist.strings */; };
 		7A4227B417EE10FC00E90387 /* Word_RecallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227B317EE10FC00E90387 /* Word_RecallTests.m */; };
 		7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C117EE122100E90387 /* ATArchivableObject.m */; };
-		7A4227C617EE125500E90387 /* WRCWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C517EE125500E90387 /* WRCWord.m */; };
+		7A4227C617EE125500E90387 /* WRCWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C517EE125500E90387 /* WRCWordInfo.m */; };
 		7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D617EE14D700E90387 /* GOOWordInfo.m */; };
 		7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */; };
 		7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */; };
 		7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */; };
+		7AF0584117EE37FE00BEADD1 /* ATObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0584017EE37FE00BEADD1 /* ATObjectStore.m */; };
+		7AF0584317EE395E00BEADD1 /* WRCWordList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0584217EE395E00BEADD1 /* WRCWordList.plist */; };
+		7AF0584717EE3AD600BEADD1 /* NSURL+SystemDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0584617EE3AD600BEADD1 /* NSURL+SystemDirectories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +62,8 @@
 		7A4227B317EE10FC00E90387 /* Word_RecallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Word_RecallTests.m; sourceTree = "<group>"; };
 		7A4227C017EE122100E90387 /* ATArchivableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATArchivableObject.h; sourceTree = "<group>"; };
 		7A4227C117EE122100E90387 /* ATArchivableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArchivableObject.m; sourceTree = "<group>"; };
-		7A4227C417EE125500E90387 /* WRCWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWord.h; sourceTree = "<group>"; };
-		7A4227C517EE125500E90387 /* WRCWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWord.m; sourceTree = "<group>"; };
+		7A4227C417EE125500E90387 /* WRCWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordInfo.h; sourceTree = "<group>"; };
+		7A4227C517EE125500E90387 /* WRCWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordInfo.m; sourceTree = "<group>"; };
 		7A4227D517EE14D700E90387 /* GOOWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfo.h; sourceTree = "<group>"; };
 		7A4227D617EE14D700E90387 /* GOOWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordInfo.m; sourceTree = "<group>"; };
 		7A4227D717EE14D700E90387 /* GOOWordInfoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfoSearch.h; sourceTree = "<group>"; };
@@ -69,6 +72,11 @@
 		7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAFJSONPResponseSerializer.m; sourceTree = "<group>"; };
 		7AF0583517EE1F8800BEADD1 /* GOOJSONPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOJSONPResponseSerializer.h; sourceTree = "<group>"; };
 		7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOJSONPResponseSerializer.m; sourceTree = "<group>"; };
+		7AF0583F17EE37FE00BEADD1 /* ATObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATObjectStore.h; sourceTree = "<group>"; };
+		7AF0584017EE37FE00BEADD1 /* ATObjectStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATObjectStore.m; sourceTree = "<group>"; };
+		7AF0584217EE395E00BEADD1 /* WRCWordList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WRCWordList.plist; sourceTree = "<group>"; };
+		7AF0584517EE3AD600BEADD1 /* NSURL+SystemDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SystemDirectories.h"; sourceTree = "<group>"; };
+		7AF0584617EE3AD600BEADD1 /* NSURL+SystemDirectories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SystemDirectories.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			children = (
 				7A42279717EE10FC00E90387 /* WRCAppDelegate.h */,
 				7A42279817EE10FC00E90387 /* WRCAppDelegate.m */,
+				7AF0584217EE395E00BEADD1 /* WRCWordList.plist */,
 				7A4227BE17EE122100E90387 /* Generic */,
 				7A4227C317EE124300E90387 /* Model */,
 				7A4227D417EE14D700E90387 /* Google Dictionary API */,
@@ -175,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4227BF17EE122100E90387 /* Classes */,
-				7AF0583817EE2BC300BEADD1 /* Categories */,
+				7AF0584417EE3AD100BEADD1 /* Categories */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -185,6 +194,8 @@
 			children = (
 				7A4227C017EE122100E90387 /* ATArchivableObject.h */,
 				7A4227C117EE122100E90387 /* ATArchivableObject.m */,
+				7AF0583F17EE37FE00BEADD1 /* ATObjectStore.h */,
+				7AF0584017EE37FE00BEADD1 /* ATObjectStore.m */,
 				7AF0583217EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.h */,
 				7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */,
 			);
@@ -194,8 +205,8 @@
 		7A4227C317EE124300E90387 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A4227C417EE125500E90387 /* WRCWord.h */,
-				7A4227C517EE125500E90387 /* WRCWord.m */,
+				7A4227C417EE125500E90387 /* WRCWordInfo.h */,
+				7A4227C517EE125500E90387 /* WRCWordInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,9 +224,11 @@
 			path = "Google Dictionary API";
 			sourceTree = "<group>";
 		};
-		7AF0583817EE2BC300BEADD1 /* Categories */ = {
+		7AF0584417EE3AD100BEADD1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7AF0584517EE3AD600BEADD1 /* NSURL+SystemDirectories.h */,
+				7AF0584617EE3AD600BEADD1 /* NSURL+SystemDirectories.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -300,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4227A117EE10FC00E90387 /* Images.xcassets in Resources */,
+				7AF0584317EE395E00BEADD1 /* WRCWordList.plist in Resources */,
 				7A42279317EE10FC00E90387 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */,
+				7AF0584117EE37FE00BEADD1 /* ATObjectStore.m in Sources */,
 				7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */,
-				7A4227C617EE125500E90387 /* WRCWord.m in Sources */,
+				7AF0584717EE3AD600BEADD1 /* NSURL+SystemDirectories.m in Sources */,
+				7A4227C617EE125500E90387 /* WRCWordInfo.m in Sources */,
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
 				7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */,
 				7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */,
