@@ -19,6 +19,7 @@
 		7A4227AA17EE10FC00E90387 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278C17EE10FC00E90387 /* UIKit.framework */; };
 		7A4227B217EE10FC00E90387 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4227B017EE10FC00E90387 /* InfoPlist.strings */; };
 		7A4227B417EE10FC00E90387 /* Word_RecallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227B317EE10FC00E90387 /* Word_RecallTests.m */; };
+		7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C117EE122100E90387 /* ATArchivableObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		7A4227AF17EE10FC00E90387 /* Word RecallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Word RecallTests-Info.plist"; sourceTree = "<group>"; };
 		7A4227B117EE10FC00E90387 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A4227B317EE10FC00E90387 /* Word_RecallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Word_RecallTests.m; sourceTree = "<group>"; };
+		7A4227C017EE122100E90387 /* ATArchivableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATArchivableObject.h; sourceTree = "<group>"; };
+		7A4227C117EE122100E90387 /* ATArchivableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArchivableObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 			children = (
 				7A42279717EE10FC00E90387 /* WRCAppDelegate.h */,
 				7A42279817EE10FC00E90387 /* WRCAppDelegate.m */,
+				7A4227BE17EE122100E90387 /* Generic */,
 				7A4227A017EE10FC00E90387 /* Images.xcassets */,
 				7A42278F17EE10FC00E90387 /* Supporting Files */,
 			);
@@ -142,6 +146,23 @@
 				7A4227B017EE10FC00E90387 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A4227BE17EE122100E90387 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				7A4227BF17EE122100E90387 /* Classes */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		7A4227BF17EE122100E90387 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7A4227C017EE122100E90387 /* ATArchivableObject.h */,
+				7A4227C117EE122100E90387 /* ATArchivableObject.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
+				7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */,
 				7A42279917EE10FC00E90387 /* WRCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
