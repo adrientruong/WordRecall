@@ -93,8 +93,6 @@
         
         for (NSDictionary *entry in entries) {
             
-            NSLog(@"keys:%@", [entry allKeys]);
-            
             NSString *type = entry[@"type"];
             
             if ([type isEqualToString:@"meaning"]) {
@@ -113,7 +111,6 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
-        NSLog(@"error:%@", error);
         completionHandler(nil, error);
         
     }];
