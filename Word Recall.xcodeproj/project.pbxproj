@@ -13,7 +13,6 @@
 		7A42279317EE10FC00E90387 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A42279117EE10FC00E90387 /* InfoPlist.strings */; };
 		7A42279517EE10FC00E90387 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A42279417EE10FC00E90387 /* main.m */; };
 		7A42279917EE10FC00E90387 /* WRCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A42279817EE10FC00E90387 /* WRCAppDelegate.m */; };
-		7A42279F17EE10FC00E90387 /* WRCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A42279E17EE10FC00E90387 /* WRCViewController.m */; };
 		7A4227A117EE10FC00E90387 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4227A017EE10FC00E90387 /* Images.xcassets */; };
 		7A4227A817EE10FC00E90387 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4227A717EE10FC00E90387 /* XCTest.framework */; };
 		7A4227A917EE10FC00E90387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278817EE10FC00E90387 /* Foundation.framework */; };
@@ -43,8 +42,6 @@
 		7A42279617EE10FC00E90387 /* Word Recall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Word Recall-Prefix.pch"; sourceTree = "<group>"; };
 		7A42279717EE10FC00E90387 /* WRCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRCAppDelegate.h; sourceTree = "<group>"; };
 		7A42279817EE10FC00E90387 /* WRCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRCAppDelegate.m; sourceTree = "<group>"; };
-		7A42279D17EE10FC00E90387 /* WRCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRCViewController.h; sourceTree = "<group>"; };
-		7A42279E17EE10FC00E90387 /* WRCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRCViewController.m; sourceTree = "<group>"; };
 		7A4227A017EE10FC00E90387 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7A4227A617EE10FC00E90387 /* Word RecallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word RecallTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4227A717EE10FC00E90387 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,8 +109,6 @@
 			children = (
 				7A42279717EE10FC00E90387 /* WRCAppDelegate.h */,
 				7A42279817EE10FC00E90387 /* WRCAppDelegate.m */,
-				7A42279D17EE10FC00E90387 /* WRCViewController.h */,
-				7A42279E17EE10FC00E90387 /* WRCViewController.m */,
 				7A4227A017EE10FC00E90387 /* Images.xcassets */,
 				7A42278F17EE10FC00E90387 /* Supporting Files */,
 			);
@@ -246,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A42279F17EE10FC00E90387 /* WRCViewController.m in Sources */,
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
 				7A42279917EE10FC00E90387 /* WRCAppDelegate.m in Sources */,
 			);
