@@ -15,10 +15,10 @@
 
 @interface WRCQuizViewController ()
 
-- (IBAction)showCorrectAnswer;
-
 @property (nonatomic, strong) WRCWordDefinitionTableViewPickerView *pickerView;
 @property (nonatomic, weak) IBOutlet UILabel *wordLabel;
+
+- (IBAction)showCorrectAnswer;
 
 @end
 
