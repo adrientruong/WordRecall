@@ -12,6 +12,7 @@
 #import "ATObjectStore.h"
 #import "NSURL+SystemDirectories.h"
 #import "WRCWordInfo.h"
+#import "WRCQuizViewController.h"
 
 @interface WRCAppDelegate ()
 
@@ -25,20 +26,20 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    WRCQuizViewController *quizViewController = [[WRCQuizViewController alloc] init];
     
-    self.window.rootViewController = [[UIViewController alloc] init];
+    self.window.rootViewController = quizViewController;
     
     __weak WRCAppDelegate *weakSelf = self;
     
     [self addNewWordsIfNeccessaryWithCompletionHandler:^{
-       
-        for (WRCWordInfo *wordInfo in [[weakSelf wordStore] objects]) {
-            
-            NSLog(@"%@:%@", wordInfo.word, wordInfo.definition);
-            
-        }
+        
+        quizViewController.wordStore = [weakSelf wordStore];
         
     }];
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
     
@@ -89,7 +90,16 @@
                 
                 wordInfo.definition = googleWordInfo.definition;
                 
-                [wordStore addObject:wordInfo];
+                if ([wordInfo.definition length] == 0) {
+                    
+                    NSLog(@"Cannot find definition for word:%@", wordInfo.word);
+                    
+                }
+                else {
+                    
+                    [wordStore addObject:wordInfo];
+
+                }
                 
                 completions++;
                 

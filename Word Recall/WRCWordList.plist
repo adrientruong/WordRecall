@@ -4,10 +4,247 @@
 <array>
 	<string>ambivalent</string>
 	<string>anomaly</string>
+	<string>anomalous, atypical</string>
 	<string>sarcastic, sardonic, snide</string>
 	<string>dearth, paucity</string>
 	<string>prattle</string>
 	<string>wry, droll</string>
 	<string>unconventional, unorthodox</string>
+	<string>meticulous, painstaking, fastidious</string>
+	<string>audacious</string>
+	<string>indifferent, apathetic</string>
+	<string>diffident, self-effacing</string>
+	<string>pragmatic</string>
+	<string>evocation</string>
+	<string>presumptuous</string>
+	<string>effrontery</string>
+	<string>recalcitrant, obstinate, obdurate, refractory</string>
+	<string>boon</string>
+	<string>bane</string>
+	<string>clandestine, surreptitious</string>
+	<string>aboveboard</string>
+	<string>affable, amiable, genial, gregarious</string>
+	<string>austere</string>
+	<string>altruism</string>
+	<string>ambiguity, equivocal</string>
+	<string>ambiguous, dubious</string>
+	<string>upbraid, reproach, castigate, censure</string>
+	<string>nostalgia</string>
+	<string>conjecture, supposition</string>
+	<string>obsolete, archaic, atiquated</string>
+	<string>auspicious, propitious</string>
+	<string>gaffe, faux pas</string>
+	<string>impasse</string>
+	<string>anachronism</string>
+	<string>belie</string>
+	<string>mitigate, mollify, assuage, alleviate</string>
+	<string>covet</string>
+	<string>covetous, avaricious</string>
+	<string>antithesis, antipode</string>
+	<string>prototype</string>
+	<string>aloof</string>
+	<string>trite, hackneyed, banal, platitudinous, insipid, cliched</string>
+	<string>antecedent, forerunner, precursor</string>
+	<string>plausible</string>
+	<string>implausible</string>
+	<string>prudent</string>
+	<string>aesthetic</string>
+	<string>paradox</string>
+	<string>enigmatic, inscrutable</string>
+	<string>acquiesce</string>
+	<string>naive, gullible, credulous, ingenuous</string>
+	<string>autonomy</string>
+	<string>futile</string>
+	<string>indigenous, endemic</string>
+	<string>ubiquitous, prevalent, pervasive</string>
+	<string>pandemic</string>
+	<string>fortitude</string>
+	<string>diminutive</string>
+	<string>trivial, minutiae</string>
+	<string>exhort, implore</string>
+	<string>antipathy, detest, enmity, rancor</string>
+	<string>digress</string>
+	<string>tenacious</string>
+	<string>indulgent</string>
+	<string>polarize, divisive</string>
+	<string>nebulous</string>
+	<string>analogy</string>
+	<string>ephemeral, fleeting, evanescent</string>
+	<string>perennial</string>
+	<string>penchant, predilection, propensity, bent, inclination</string>
+	<string>capricious, mercurial, fickle</string>
+	<string>boorish, uncouth, crass</string>
+	<string>indignant</string>
+	<string>innuendo</string>
+	<string>thwart, stymie</string>
+	<string>adroit, deft, adept, dexterous</string>
+	<string>admonish</string>
+	<string>incontrovertible</string>
+	<string>voracious, ravenous, rapacious, insatiable</string>
+	<string>callous</string>
+	<string>intrepid, undaunted</string>
+	<string>nonchalant, unflappable</string>
+	<string>convoluted</string>
+	<string>itinerant</string>
+	<string>sedentary</string>
+	<string>poignant</string>
+	<string>impetus</string>
+	<string>bucolic, rustic, pastoral</string>
+	<string>equanimity, poise</string>
+	<string>panache, verve, flamboyance, élan</string>
+	<string>provocative</string>
+	<string>placid, serne</string>
+	<string>fortuitous</string>
+	<string>dispel</string>
+	<string>amalgam</string>
+	<string>viable, feasible</string>
+	<string>anguish</string>
+	<string>intemperate</string>
+	<string>temperate</string>
+	<string>superficial</string>
+	<string>laud, extol, tout, acclaim</string>
+	<string>dismissive</string>
+	<string>disparage</string>
+	<string>pompous, pretentious, ostentatious</string>
+	<string>cryptic</string>
+	<string>subtle</string>
+	<string>disparity</string>
+	<string>curtail</string>
+	<string>innocuous</string>
+	<string>diatribe, tirade, harangue, rant</string>
+	<string>charlatan</string>
+	<string>skeptic</string>
+	<string>rhetorician</string>
+	<string>hedonist</string>
+	<string>ascetic</string>
+	<string>raconteur</string>
+	<string>iconoclast</string>
+	<string>partisan</string>
+	<string>polymath</string>
+	<string>dilettante</string>
+	<string>mentor</string>
+	<string>acolyte</string>
+	<string>demagogue</string>
+	<string>automaton</string>
+	<string>recluse</string>
+	<string>bungler</string>
+	<string>inept</string>
+	<string>clairvoyant</string>
+	<string>seer</string>
+	<string>prognosticator</string>
+	<string>pundit</string>
+	<string>zealot</string>
+	<string>neophyte, novice, greenhorn</string>
+	<string>benefactor, patron</string>
+	<string>beneficiary</string>
+	<string>dissembler, prevaricator</string>
+	<string>proponent, advocate</string>
+	<string>prodigy</string>
+	<string>oracle</string>
+	<string>misanthrope</string>
+	<string>innovator</string>
+	<string>sycophant, toady</string>
+	<string>stoic, stolid</string>
+	<string>reprobate</string>
+	<string>renegade</string>
+	<string>draconian</string>
+	<string>laconic, succinct, terse</string>
+	<string>spartan, austere</string>
+	<string>halcyon</string>
+	<string>sophistry</string>
+	<string>chimerical</string>
+	<string>ostracize, banish</string>
+	<string>impecunious</string>
+	<string>nefarious, villainous</string>
+	<string>jovial, jocular</string>
+	<string>dirge</string>
+	<string>maudlin</string>
+	<string>quixotic</string>
+	<string>pandemonium, tumult</string>
+	<string>martinet</string>
+	<string>fiasco, debacle</string>
+	<string>bowdlerize, expurgate</string>
+	<string>galvanize</string>
+	<string>picayune</string>
+	<string>gerrymander</string>
+	<string>maverick</string>
+	<string>juggernaut</string>
+	<string>serendipity</string>
+	<string>zenith, apex</string>
+	<string>nadir</string>
+	<string>expunge, excise, expurgate</string>
+	<string>eccentric</string>
+	<string>extricate</string>
+	<string>exemplary</string>
+	<string>enumerate</string>
+	<string>elusive</string>
+	<string>exorbitant</string>
+	<string>redundant</string>
+	<string>repudiate, recant, renounce, disavow</string>
+	<string>relinquish</string>
+	<string>resilient</string>
+	<string>reaffirm</string>
+	<string>reticent</string>
+	<string>rebuff</string>
+	<string>renovate</string>
+	<string>rejuvenate</string>
+	<string>resurgent</string>
+	<string>repugnant, abhorrent</string>
+	<string>aversion</string>
+	<string>deleterious</string>
+	<string>decry</string>
+	<string>despondent, morose, forlorn, downcast</string>
+	<string>denounce</string>
+	<string>demise</string>
+	<string>debunk</string>
+	<string>deride, derisive</string>
+	<string>devoid, bereft, vacant</string>
+	<string>impeccable</string>
+	<string>implacable</string>
+	<string>inexorable</string>
+	<string>incoherent</string>
+	<string>insurmountable</string>
+	<string>irreverent</string>
+	<string>irresolute, vacillating</string>
+	<string>circumspect, prudent, discreet</string>
+	<string>circuitous</string>
+	<string>circumvent</string>
+	<string>circumscribe</string>
+	<string>magnanimous</string>
+	<string>erroneous</string>
+	<string>momentous</string>
+	<string>mellifluous</string>
+	<string>ominous</string>
+	<string>acrimonious, racourous</string>
+	<string>copious</string>
+	<string>abstemious</string>
+	<string>temperate</string>
+	<string>malodorous</string>
+	<string>tedious</string>
+	<string>heinous, egregious, abominable</string>
+	<string>gratuitous</string>
+	<string>precarious, perilous</string>
+	<string>wistful</string>
+	<string>earnest</string>
+	<string>disgruntled, discontented, impatien</string>
+	<string>authoritative</string>
+	<string>frivolity</string>
+	<string>acerbic, acrid, caustic</string>
+	<string>solemn, grave, somber</string>
+	<string>inquisitive</string>
+	<string>reflective, pensive</string>
+	<string>equivocal</string>
+	<string>equivocate</string>
+	<string>deferential</string>
+	<string>ebullient, elated, esctatic, euphoric, exuberant</string>
+	<string>benevolent</string>
+	<string>malevolent</string>
+	<string>whimsical</string>
+	<string>vindictive</string>
+	<string>prosaic, mundane, pedestrian, vapid</string>
+	<string>vitriolic</string>
+	<string>conciliatory</string>
+	<string>despairing</string>
+	<string>inflammatory</string>
 </array>
 </plist>

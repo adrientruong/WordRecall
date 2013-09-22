@@ -14,4 +14,6 @@
 @property (nonatomic, copy) NSString *definition;
 @property (nonatomic, strong) NSMutableArray *synonyms;
 
+- (BOOL)isEqualToWordInfo:(WRCWordInfo *)wordInfo;
+
 @end

@@ -17,7 +17,7 @@
         
         WRCWordInfo *otherWord = object;
         
-        if ([otherWord.word isEqualToString:self.word]) {
+        if ([otherWord isEqualToWordInfo:self]) {
             
             return YES;
             
@@ -26,6 +26,13 @@
     }
     
     return NO;
+    
+}
+
+- (BOOL)isEqualToWordInfo:(WRCWordInfo *)wordInfo
+{
+    
+    return [wordInfo.word isEqualToString:self.word];
     
 }
 
