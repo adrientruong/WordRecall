@@ -84,8 +84,9 @@
 {
     
     WRCWordInfo *selectedWordInfo = [pickerView lastSelectedItem];
+    WRCWordInfo *deselectedWordInfo = [pickerView lastDeselectedItem];
     
-    if ([selectedWordInfo isEqualToWordInfo:self.currentWord]) {
+    if ([selectedWordInfo isEqualToWordInfo:self.currentWord] || [deselectedWordInfo isEqualToWordInfo:self.currentWord]) {
         
         [self showNextWord];
         

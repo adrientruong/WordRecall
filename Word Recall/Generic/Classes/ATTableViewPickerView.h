@@ -12,6 +12,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell forItem:(id)item selected:(BOOL)isSelected;
 - (id)lastSelectedItem;
+- (id)lastDeselectedItem;
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 

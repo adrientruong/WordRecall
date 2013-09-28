@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray *mutableSelectedItems;
 
+@property (nonatomic, strong) id lastDeselectedItem;
+
 @end
 
 @implementation ATTableViewPickerView
@@ -205,6 +207,8 @@
             
             deselectedItem = item;
             selectedItem = nil;
+            
+            self.lastDeselectedItem = item;
             
             [self sendActionsForControlEvents:UIControlEventValueChanged];
 
