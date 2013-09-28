@@ -9,6 +9,21 @@
 #import "WRCWordInfo.h"
 
 @implementation WRCWordInfo
+@synthesize progress;
+
+- (id)init
+{
+    
+    self = [super init];
+    
+    if (self != nil) {
+        
+        
+    }
+    
+    return self;
+    
+}
 
 - (BOOL)isEqual:(id)object
 {

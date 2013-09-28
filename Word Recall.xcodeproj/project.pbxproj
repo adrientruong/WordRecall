@@ -35,6 +35,7 @@
 		7AF0586817EE587700BEADD1 /* NSArray+RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0586717EE587700BEADD1 /* NSArray+RandomObject.m */; };
 		7AF0586E17EEA37F00BEADD1 /* ATTableViewPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0586D17EEA37F00BEADD1 /* ATTableViewPickerView.m */; };
 		7AF0587117EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0587017EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m */; };
+		7AF0587417EF7A6B00BEADD1 /* WRCWordProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		7AF0586D17EEA37F00BEADD1 /* ATTableViewPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTableViewPickerView.m; sourceTree = "<group>"; };
 		7AF0586F17EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordDefinitionTableViewPickerView.h; sourceTree = "<group>"; };
 		7AF0587017EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordDefinitionTableViewPickerView.m; sourceTree = "<group>"; };
+		7AF0587217EF7A6B00BEADD1 /* WRCWordProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordProgress.h; sourceTree = "<group>"; };
+		7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordProgress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,8 @@
 			children = (
 				7A4227C417EE125500E90387 /* WRCWordInfo.h */,
 				7A4227C517EE125500E90387 /* WRCWordInfo.m */,
+				7AF0587217EF7A6B00BEADD1 /* WRCWordProgress.h */,
+				7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				7AF0584717EE3AD600BEADD1 /* NSURL+SystemDirectories.m in Sources */,
 				7A4227C617EE125500E90387 /* WRCWordInfo.m in Sources */,
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
+				7AF0587417EF7A6B00BEADD1 /* WRCWordProgress.m in Sources */,
 				7AF0586817EE587700BEADD1 /* NSArray+RandomObject.m in Sources */,
 				7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */,
 				7AF0586517EE563F00BEADD1 /* NSArray+Shuffle.m in Sources */,
