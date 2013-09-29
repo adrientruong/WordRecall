@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import "GOOJSONPResponseSerializer.h"
 #import "GOOWordInfo.h"
+#import "GOOWordDefinition.h"
 
 @interface GOOWordInfoSearch ()
 
@@ -89,23 +90,99 @@
         
         NSDictionary *responseDictionary = responseObject;
         
-        NSArray *entries = responseDictionary[@"primaries"][0][@"entries"];
+        NSArray *primaries = responseDictionary[@"primaries"];
         
-        for (NSDictionary *entry in entries) {
+        NSMutableArray *definitions = [NSMutableArray array];
+        
+        for (NSDictionary *primaryDictionary in primaries) {
             
-            NSString *type = entry[@"type"];
+            GOOWordDefinition *wordDefinition = [[GOOWordDefinition alloc] init];
             
-            if ([type isEqualToString:@"meaning"]) {
+            NSArray *terms = primaryDictionary[@"terms"];
+            
+            for (NSDictionary *termDictionary in terms) {
                 
-                NSArray *terms = entry[@"terms"];
+                GOOWordDefinition *wordDefinition = [[GOOWordDefinition alloc] init];
+
+                NSString *type = termDictionary[@"type"];
                 
-                wordInfo.definition = terms[0][@"text"];
+                if ([type isEqualToString:@"text"]) {
                 
-                break;
+                    wordInfo.word = termDictionary[@"text"];
+                    
+                    NSArray *labels = termDictionary[@"labels"];
+                    
+                    for (NSDictionary *labelDictionary in labels) {
+                        
+                        NSString *title = labelDictionary[@"title"];
+                        
+                        if ([title isEqualToString:@"Part-of-speech"]) {
+                            
+                            wordDefinition.partOfSpeech = title;
+                            
+                        }
+                        
+                        break;
+                        
+                    }
+                    
+                }
+                
+                if ([wordInfo.word length] > 0) {
+                    
+                    break;
+                    
+                }
                 
             }
             
+            NSArray *entries = primaryDictionary[@"entries"];
+            
+            for (NSDictionary *entry in entries) {
+                
+                NSString *type = entry[@"type"];
+                
+                if ([type isEqualToString:@"meaning"]) {
+                    
+                    NSArray *terms = entry[@"terms"];
+                    
+                    wordDefinition.definition = terms[0][@"text"];
+                    
+                    NSArray *innerEntries = entry[@"entries"];
+                    
+                    NSMutableArray *exampleSentences = [NSMutableArray array];
+                    
+                    for (NSDictionary *innerEntry in innerEntries) {
+                        
+                        NSString *innerEntryType = innerEntry[@"type"];
+                        
+                        if ([innerEntryType isEqualToString:@"example"]) {
+                            
+                            NSArray *innerEntryTerms = innerEntry[@"terms"];
+                            
+                            NSDictionary *innerEntryTerm = [innerEntryTerms firstObject];
+                            
+                            NSString *exampleSentence = innerEntryTerm[@"text"];
+                            
+                            [exampleSentences addObject:exampleSentence];
+                            
+                        }
+                        
+                    }
+                    
+                    wordDefinition.exampleSentences = exampleSentences;
+                    
+                    break;
+                    
+                }
+                
+            }
+            
+            [definitions addObject:wordDefinition];
+            
         }
+        
+        wordInfo.definitions = definitions;
         
         completionHandler(wordInfo, nil);
         

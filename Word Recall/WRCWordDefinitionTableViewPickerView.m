@@ -7,7 +7,7 @@
 //
 
 #import "WRCWordDefinitionTableViewPickerView.h"
-#import "WRCWordInfo.h" 
+#import "WRCQuizWord.h"
 
 @implementation WRCWordDefinitionTableViewPickerView
 
@@ -18,9 +18,9 @@
     
     if (isSelected) {
         
-        WRCWordInfo *wordInfo = item;
+        WRCWord *word = item;
         
-        if ([wordInfo isEqualToWordInfo:self.correctWordInfo] == NO) {
+        if ([word isEqual:self.correctWord] == NO) {
             
             cell.textLabel.textColor = [UIColor redColor];
             

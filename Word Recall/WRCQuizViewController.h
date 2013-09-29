@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class ATObjectStore;
-@class WRCWordInfo;
+@class WRCWordStore;
+@class WRCQuizWord;
 
 @interface WRCQuizViewController : UIViewController
 
-@property (nonatomic, strong) ATObjectStore *wordStore;
+@property (nonatomic, strong) WRCWordStore *wordStore;
 
-@property (nonatomic, strong) WRCWordInfo *currentWord;
+@property (nonatomic, strong) WRCQuizWord *currentWord;
 
 @property (nonatomic, assign) NSInteger answerChoicesCount;
 

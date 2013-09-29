@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		21BB04DA49594452AD5EE0BF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385FF3CC3C6A49D5B285D5B1 /* libPods.a */; };
+		7A0CF45E17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF45C17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodeld */; };
+		7A0CF46A17F68E29004CA3CE /* WRCQuizWord+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF46917F68E29004CA3CE /* WRCQuizWord+Custom.m */; };
+		7A0CF47617F691F7004CA3CE /* ATCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF47517F691F7004CA3CE /* ATCoreDataStack.m */; };
+		7A0CF47817F6935B004CA3CE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0CF47717F6935B004CA3CE /* CoreData.framework */; };
+		7A0CF47B17F6961B004CA3CE /* WRCWordStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF47A17F6961B004CA3CE /* WRCWordStore.m */; };
+		7A0CF48117F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF48017F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m */; };
+		7A0CF48417F6A4C8004CA3CE /* WRCWordDefinition+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CF48317F6A4C8004CA3CE /* WRCWordDefinition+Custom.m */; };
 		7A42278917EE10FC00E90387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278817EE10FC00E90387 /* Foundation.framework */; };
 		7A42278B17EE10FC00E90387 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278A17EE10FC00E90387 /* CoreGraphics.framework */; };
 		7A42278D17EE10FC00E90387 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A42278C17EE10FC00E90387 /* UIKit.framework */; };
@@ -21,9 +28,12 @@
 		7A4227B217EE10FC00E90387 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4227B017EE10FC00E90387 /* InfoPlist.strings */; };
 		7A4227B417EE10FC00E90387 /* Word_RecallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227B317EE10FC00E90387 /* Word_RecallTests.m */; };
 		7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C117EE122100E90387 /* ATArchivableObject.m */; };
-		7A4227C617EE125500E90387 /* WRCWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227C517EE125500E90387 /* WRCWordInfo.m */; };
 		7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D617EE14D700E90387 /* GOOWordInfo.m */; };
 		7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */; };
+		7AE8594617F732AD0089BD9B /* WRCWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8594517F732AD0089BD9B /* WRCWord.m */; };
+		7AE8594917F732AD0089BD9B /* WRCWordDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8594817F732AD0089BD9B /* WRCWordDefinition.m */; };
+		7AE8594C17F732AD0089BD9B /* WRCQuizWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8594B17F732AD0089BD9B /* WRCQuizWord.m */; };
+		7AE8594F17F7488E0089BD9B /* GOOWordDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8594E17F7488E0089BD9B /* GOOWordDefinition.m */; };
 		7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */; };
 		7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0583617EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m */; };
 		7AF0584117EE37FE00BEADD1 /* ATObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0584017EE37FE00BEADD1 /* ATObjectStore.m */; };
@@ -35,7 +45,6 @@
 		7AF0586817EE587700BEADD1 /* NSArray+RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0586717EE587700BEADD1 /* NSArray+RandomObject.m */; };
 		7AF0586E17EEA37F00BEADD1 /* ATTableViewPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0586D17EEA37F00BEADD1 /* ATTableViewPickerView.m */; };
 		7AF0587117EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0587017EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m */; };
-		7AF0587417EF7A6B00BEADD1 /* WRCWordProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,18 @@
 /* Begin PBXFileReference section */
 		385FF3CC3C6A49D5B285D5B1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DC83C38CD14CFB926836F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		7A0CF45D17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WRCWordRecallModel.xcdatamodel; sourceTree = "<group>"; };
+		7A0CF46817F68E29004CA3CE /* WRCQuizWord+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRCQuizWord+Custom.h"; sourceTree = "<group>"; };
+		7A0CF46917F68E29004CA3CE /* WRCQuizWord+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRCQuizWord+Custom.m"; sourceTree = "<group>"; };
+		7A0CF47417F691F7004CA3CE /* ATCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATCoreDataStack.h; sourceTree = "<group>"; };
+		7A0CF47517F691F7004CA3CE /* ATCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATCoreDataStack.m; sourceTree = "<group>"; };
+		7A0CF47717F6935B004CA3CE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7A0CF47917F6961B004CA3CE /* WRCWordStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordStore.h; sourceTree = "<group>"; };
+		7A0CF47A17F6961B004CA3CE /* WRCWordStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordStore.m; sourceTree = "<group>"; };
+		7A0CF47F17F6970E004CA3CE /* NSManagedObjectContext+RandomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+RandomObject.h"; sourceTree = "<group>"; };
+		7A0CF48017F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+RandomObject.m"; sourceTree = "<group>"; };
+		7A0CF48217F6A4C8004CA3CE /* WRCWordDefinition+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRCWordDefinition+Custom.h"; sourceTree = "<group>"; };
+		7A0CF48317F6A4C8004CA3CE /* WRCWordDefinition+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRCWordDefinition+Custom.m"; sourceTree = "<group>"; };
 		7A42278517EE10FC00E90387 /* Word Recall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Recall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A42278817EE10FC00E90387 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A42278A17EE10FC00E90387 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,12 +90,18 @@
 		7A4227B317EE10FC00E90387 /* Word_RecallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Word_RecallTests.m; sourceTree = "<group>"; };
 		7A4227C017EE122100E90387 /* ATArchivableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATArchivableObject.h; sourceTree = "<group>"; };
 		7A4227C117EE122100E90387 /* ATArchivableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATArchivableObject.m; sourceTree = "<group>"; };
-		7A4227C417EE125500E90387 /* WRCWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordInfo.h; sourceTree = "<group>"; };
-		7A4227C517EE125500E90387 /* WRCWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordInfo.m; sourceTree = "<group>"; };
 		7A4227D517EE14D700E90387 /* GOOWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfo.h; sourceTree = "<group>"; };
 		7A4227D617EE14D700E90387 /* GOOWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordInfo.m; sourceTree = "<group>"; };
 		7A4227D717EE14D700E90387 /* GOOWordInfoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordInfoSearch.h; sourceTree = "<group>"; };
 		7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordInfoSearch.m; sourceTree = "<group>"; };
+		7AE8594417F732AD0089BD9B /* WRCWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWord.h; sourceTree = "<group>"; };
+		7AE8594517F732AD0089BD9B /* WRCWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWord.m; sourceTree = "<group>"; };
+		7AE8594717F732AD0089BD9B /* WRCWordDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordDefinition.h; sourceTree = "<group>"; };
+		7AE8594817F732AD0089BD9B /* WRCWordDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordDefinition.m; sourceTree = "<group>"; };
+		7AE8594A17F732AD0089BD9B /* WRCQuizWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCQuizWord.h; sourceTree = "<group>"; };
+		7AE8594B17F732AD0089BD9B /* WRCQuizWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCQuizWord.m; sourceTree = "<group>"; };
+		7AE8594D17F7488E0089BD9B /* GOOWordDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordDefinition.h; sourceTree = "<group>"; };
+		7AE8594E17F7488E0089BD9B /* GOOWordDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordDefinition.m; sourceTree = "<group>"; };
 		7AF0583217EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATAFJSONPResponseSerializer.h; sourceTree = "<group>"; };
 		7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAFJSONPResponseSerializer.m; sourceTree = "<group>"; };
 		7AF0583517EE1F8800BEADD1 /* GOOJSONPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOJSONPResponseSerializer.h; sourceTree = "<group>"; };
@@ -95,8 +122,6 @@
 		7AF0586D17EEA37F00BEADD1 /* ATTableViewPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTableViewPickerView.m; sourceTree = "<group>"; };
 		7AF0586F17EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordDefinitionTableViewPickerView.h; sourceTree = "<group>"; };
 		7AF0587017EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordDefinitionTableViewPickerView.m; sourceTree = "<group>"; };
-		7AF0587217EF7A6B00BEADD1 /* WRCWordProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordProgress.h; sourceTree = "<group>"; };
-		7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordProgress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0CF47817F6935B004CA3CE /* CoreData.framework in Frameworks */,
 				7A42278B17EE10FC00E90387 /* CoreGraphics.framework in Frameworks */,
 				7A42278D17EE10FC00E90387 /* UIKit.framework in Frameworks */,
 				7A42278917EE10FC00E90387 /* Foundation.framework in Frameworks */,
@@ -147,6 +173,7 @@
 		7A42278717EE10FC00E90387 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A0CF47717F6935B004CA3CE /* CoreData.framework */,
 				7A42278817EE10FC00E90387 /* Foundation.framework */,
 				7A42278A17EE10FC00E90387 /* CoreGraphics.framework */,
 				7A42278C17EE10FC00E90387 /* UIKit.framework */,
@@ -225,6 +252,8 @@
 				7AF0583317EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m */,
 				7AF0586C17EEA37F00BEADD1 /* ATTableViewPickerView.h */,
 				7AF0586D17EEA37F00BEADD1 /* ATTableViewPickerView.m */,
+				7A0CF47417F691F7004CA3CE /* ATCoreDataStack.h */,
+				7A0CF47517F691F7004CA3CE /* ATCoreDataStack.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -232,10 +261,19 @@
 		7A4227C317EE124300E90387 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A4227C417EE125500E90387 /* WRCWordInfo.h */,
-				7A4227C517EE125500E90387 /* WRCWordInfo.m */,
-				7AF0587217EF7A6B00BEADD1 /* WRCWordProgress.h */,
-				7AF0587317EF7A6B00BEADD1 /* WRCWordProgress.m */,
+				7AE8594417F732AD0089BD9B /* WRCWord.h */,
+				7AE8594517F732AD0089BD9B /* WRCWord.m */,
+				7AE8594A17F732AD0089BD9B /* WRCQuizWord.h */,
+				7AE8594B17F732AD0089BD9B /* WRCQuizWord.m */,
+				7AE8594717F732AD0089BD9B /* WRCWordDefinition.h */,
+				7AE8594817F732AD0089BD9B /* WRCWordDefinition.m */,
+				7A0CF45C17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodeld */,
+				7A0CF46817F68E29004CA3CE /* WRCQuizWord+Custom.h */,
+				7A0CF46917F68E29004CA3CE /* WRCQuizWord+Custom.m */,
+				7A0CF48217F6A4C8004CA3CE /* WRCWordDefinition+Custom.h */,
+				7A0CF48317F6A4C8004CA3CE /* WRCWordDefinition+Custom.m */,
+				7A0CF47917F6961B004CA3CE /* WRCWordStore.h */,
+				7A0CF47A17F6961B004CA3CE /* WRCWordStore.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +283,8 @@
 			children = (
 				7A4227D517EE14D700E90387 /* GOOWordInfo.h */,
 				7A4227D617EE14D700E90387 /* GOOWordInfo.m */,
+				7AE8594D17F7488E0089BD9B /* GOOWordDefinition.h */,
+				7AE8594E17F7488E0089BD9B /* GOOWordDefinition.m */,
 				7A4227D717EE14D700E90387 /* GOOWordInfoSearch.h */,
 				7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */,
 				7AF0583517EE1F8800BEADD1 /* GOOJSONPResponseSerializer.h */,
@@ -262,6 +302,8 @@
 				7AF0586417EE563F00BEADD1 /* NSArray+Shuffle.m */,
 				7AF0586617EE587700BEADD1 /* NSArray+RandomObject.h */,
 				7AF0586717EE587700BEADD1 /* NSArray+RandomObject.m */,
+				7A0CF47F17F6970E004CA3CE /* NSManagedObjectContext+RandomObject.h */,
+				7A0CF48017F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -398,19 +440,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE8594F17F7488E0089BD9B /* GOOWordDefinition.m in Sources */,
 				7AF0584A17EE415C00BEADD1 /* WRCQuizViewController.m in Sources */,
 				7AF0583417EE1B2700BEADD1 /* ATAFJSONPResponseSerializer.m in Sources */,
+				7AE8594917F732AD0089BD9B /* WRCWordDefinition.m in Sources */,
+				7AE8594617F732AD0089BD9B /* WRCWord.m in Sources */,
 				7AF0586E17EEA37F00BEADD1 /* ATTableViewPickerView.m in Sources */,
 				7AF0584117EE37FE00BEADD1 /* ATObjectStore.m in Sources */,
+				7A0CF46A17F68E29004CA3CE /* WRCQuizWord+Custom.m in Sources */,
 				7AF0587117EEAA9600BEADD1 /* WRCWordDefinitionTableViewPickerView.m in Sources */,
 				7A4227D917EE14D700E90387 /* GOOWordInfo.m in Sources */,
 				7AF0584717EE3AD600BEADD1 /* NSURL+SystemDirectories.m in Sources */,
-				7A4227C617EE125500E90387 /* WRCWordInfo.m in Sources */,
+				7A0CF45E17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodeld in Sources */,
 				7A42279517EE10FC00E90387 /* main.m in Sources */,
-				7AF0587417EF7A6B00BEADD1 /* WRCWordProgress.m in Sources */,
+				7A0CF47617F691F7004CA3CE /* ATCoreDataStack.m in Sources */,
 				7AF0586817EE587700BEADD1 /* NSArray+RandomObject.m in Sources */,
+				7A0CF48117F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m in Sources */,
+				7A0CF47B17F6961B004CA3CE /* WRCWordStore.m in Sources */,
+				7AE8594C17F732AD0089BD9B /* WRCQuizWord.m in Sources */,
 				7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */,
 				7AF0586517EE563F00BEADD1 /* NSArray+Shuffle.m in Sources */,
+				7A0CF48417F6A4C8004CA3CE /* WRCWordDefinition+Custom.m in Sources */,
 				7A4227C217EE122100E90387 /* ATArchivableObject.m in Sources */,
 				7A42279917EE10FC00E90387 /* WRCAppDelegate.m in Sources */,
 				7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */,
@@ -628,6 +678,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A0CF45C17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A0CF45D17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodel */,
+			);
+			currentVersion = 7A0CF45D17F67EF5004CA3CE /* WRCWordRecallModel.xcdatamodel */;
+			path = WRCWordRecallModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7A42277D17EE10FC00E90387 /* Project object */;
 }

@@ -11,6 +11,7 @@
 @interface GOOWordInfo : NSObject
 
 @property (nonatomic, copy) NSString *word;
-@property (nonatomic, copy) NSString *definition;
+@property (nonatomic, strong) NSArray *definitions;
+@property (nonatomic, copy) NSString *exampleSentence;
 
 @end

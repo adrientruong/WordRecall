@@ -7,11 +7,13 @@
 //
 
 #import "WRCQuizViewController.h"
-#import "ATObjectStore.h"
 #import "WRCWordDefinitionTableViewPickerView.h"
-#import "WRCWordInfo.h"
+#import "WRCWordDefinition.h"
+#import "WRCQuizWord.h"
+#import "WRCQuizWord+Custom.h"
 #import "NSArray+Shuffle.h"
 #import "NSArray+RandomObject.h"
+#import "WRCWordStore.h"
 
 @interface WRCQuizViewController ()
 
@@ -55,7 +57,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_wordLabel][_pickerView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_pickerView]|" options:0 metrics:nil views:views]];
 
-    self.pickerView.itemTitleKeyPath = @"definition";
+    self.pickerView.itemTitleKeyPath = @"quizDefinition.definition";
     self.pickerView.minimumNumberOfSelections = 0;
     self.pickerView.maximumNumberOfSelections = -1;
     
@@ -83,12 +85,30 @@
 - (void)didSelectDefinition:(WRCWordDefinitionTableViewPickerView *)pickerView
 {
     
-    WRCWordInfo *selectedWordInfo = [pickerView lastSelectedItem];
-    WRCWordInfo *deselectedWordInfo = [pickerView lastDeselectedItem];
+    WRCQuizWord *selectedWord = [pickerView lastSelectedItem];
+    WRCQuizWord *deselectedWord = [pickerView lastDeselectedItem];
     
-    if ([selectedWordInfo isEqualToWordInfo:self.currentWord] || [deselectedWordInfo isEqualToWordInfo:self.currentWord]) {
+    if ([selectedWord isEqual:self.currentWord] || [deselectedWord isEqual:self.currentWord]) {
+        
+        if ([pickerView.selectedItems count] == 1 && [pickerView.selectedItems firstObject] == self.currentWord) {
+            
+            [self.currentWord incrementQuizCount];
+            
+        }
         
         [self showNextWord];
+        
+    }
+    else {
+        
+        if ([pickerView.selectedItems count] == 1) {
+            
+            [self.currentWord incrementMissCount];
+            [self.currentWord incrementQuizCount];
+            
+        }
+        
+        [self.currentWord addIncorrectWordAssociationsObject:selectedWord];
         
     }
     
@@ -99,23 +119,25 @@
     
     self.pickerView.selectedItems = [self.pickerView.selectedItems arrayByAddingObject:self.currentWord];
     
+    [self.currentWord incrementMissCount];
+    [self.currentWord incrementQuizCount];
+
 }
 
-- (void)configureViewForWord:(WRCWordInfo *)word
+- (void)configureViewForWord:(WRCQuizWord *)word
 {
     
     NSMutableArray *answerChoices = [NSMutableArray arrayWithObject:word];
     
-    [answerChoices addObjectsFromArray:[self randomWordsNotIncluding:word withCount:self.answerChoicesCount - 1]];
-    
+    [answerChoices addObjectsFromArray:[self.wordStore randomWordsNotIncludingWord:word count:self.answerChoicesCount - 1]];
     [answerChoices shuffle];
     
     self.pickerView.items = answerChoices;
     self.pickerView.selectedItems = nil;
     
-    self.pickerView.correctWordInfo = word;
+    self.pickerView.correctWord = word;
     
-    NSMutableArray *possibleWords = [word.synonyms mutableCopy];
+    NSMutableArray *possibleWords = [[[[word quizDefinition] synonyms] allObjects] mutableCopy];
     
     [possibleWords addObject:word.word];
     
@@ -126,69 +148,22 @@
 - (void)showNextWord
 {
     
-    self.currentWord = [self randomWordNotWord:self.currentWord];
+    self.currentWord = (WRCQuizWord *)[self.wordStore randomWordNotWord:self.currentWord];
     
     [self configureViewForWord:self.currentWord];
     
+    [self.currentWord incrementQuizCount];
+    
 }
 
-- (WRCWordInfo *)randomWord
+- (WRCQuizWord *)randomWord
 {
     
-    WRCWordInfo *randomWord = [[self.wordStore objects] randomObject];
-    
-    return randomWord;
+    return nil;
     
 }
 
-- (WRCWordInfo *)randomWordNotWord:(WRCWordInfo *)word
-{
-    
-    NSArray *array = nil;
-    
-    if (word != nil) {
-        
-        array = @[word];
-        
-    }
-    
-    return [self randomWordNotContainedInArray:array];
-    
-}
-
-- (WRCWordInfo *)randomWordNotContainedInArray:(NSArray *)array
-{
-    
-    NSMutableArray *allWords = [[self.wordStore objects] mutableCopy];
-    
-    [allWords removeObjectsInArray:array];
-    
-    WRCWordInfo *randomWord = [allWords randomObject];
-    
-    return randomWord;
-    
-}
-
-- (NSArray *)randomWordsNotIncluding:(WRCWordInfo *)word withCount:(NSInteger)count
-{
-    
-    NSMutableArray *randomWords = [NSMutableArray arrayWithCapacity:count];
-    
-    while ([randomWords count] < count) {
-        
-        NSArray *bannedWords = [randomWords arrayByAddingObject:word];
-        
-        WRCWordInfo *randomWord = [self randomWordNotContainedInArray:bannedWords];
-        
-        [randomWords addObject:randomWord];
-            
-    }
-    
-    return [randomWords copy];
-    
-}
-
-- (void)setWordStore:(ATObjectStore *)wordStore
+- (void)setWordStore:(WRCWordStore *)wordStore
 {
     
     _wordStore = wordStore;

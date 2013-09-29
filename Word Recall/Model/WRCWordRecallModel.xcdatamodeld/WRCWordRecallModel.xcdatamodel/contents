@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="WRCQuizWord" representedClassName="WRCQuizWord" parentEntity="WRCWord" syncable="YES">
+        <attribute name="missCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="quizCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="quizDefinitionIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="incorrectWordAssociations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WRCQuizWord" inverseName="incorrectWordAssociations" inverseEntity="WRCQuizWord" syncable="YES"/>
+    </entity>
+    <entity name="WRCWord" representedClassName="WRCWord" syncable="YES">
+        <attribute name="word" attributeType="String" syncable="YES"/>
+        <relationship name="definitions" toMany="YES" minCount="1" deletionRule="Cascade" ordered="YES" destinationEntity="WRCWordDefinition" inverseName="word" inverseEntity="WRCWordDefinition" syncable="YES"/>
+    </entity>
+    <entity name="WRCWordDefinition" representedClassName="WRCWordDefinition" syncable="YES">
+        <attribute name="definition" attributeType="String" syncable="YES"/>
+        <attribute name="exampleSentence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partOfSpeech" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="synonyms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WRCWordDefinition" inverseName="synonyms" inverseEntity="WRCWordDefinition" syncable="YES"/>
+        <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WRCWord" inverseName="definitions" inverseEntity="WRCWord" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WRCQuizWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WRCWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WRCWordDefinition" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
