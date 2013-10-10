@@ -44,7 +44,7 @@
     
     NSString *templateURLString = @"http://www.google.com/dictionary/json?callback=a&sl=en&tl=en&q=%@";
     
-    NSString *URLString = [NSString stringWithFormat:templateURLString, word];
+    NSString *URLString = [[NSString stringWithFormat:templateURLString, word] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     return URLString;
     
@@ -102,13 +102,15 @@
             
             for (NSDictionary *termDictionary in terms) {
                 
-                GOOWordDefinition *wordDefinition = [[GOOWordDefinition alloc] init];
-
                 NSString *type = termDictionary[@"type"];
                 
                 if ([type isEqualToString:@"text"]) {
-                
-                    wordInfo.word = termDictionary[@"text"];
+                    
+                    if ([wordInfo.word length] == 0) {
+                        
+                        wordInfo.word = termDictionary[@"text"];
+
+                    }
                     
                     NSArray *labels = termDictionary[@"labels"];
                     
@@ -118,7 +120,7 @@
                         
                         if ([title isEqualToString:@"Part-of-speech"]) {
                             
-                            wordDefinition.partOfSpeech = title;
+                            wordDefinition.partOfSpeech = labelDictionary[@"text"];
                             
                         }
                         
@@ -127,10 +129,9 @@
                     }
                     
                 }
-                
-                if ([wordInfo.word length] > 0) {
+                else if ([type isEqualToString:@"sound"]) {
                     
-                    break;
+                    wordDefinition.pronunciationAudioURL = [NSURL URLWithString:termDictionary[@"text"]];
                     
                 }
                 

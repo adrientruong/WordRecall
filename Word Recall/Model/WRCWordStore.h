@@ -10,7 +10,9 @@
 
 @class WRCWordDefinition;
 @class WRCWord;
-@class WRCQuizWord;
+@class WRCQuizAnswer;
+@class NSFetchedResultsController;
+@class NSFetchRequest;
 
 @interface WRCWordStore : NSObject
 
@@ -19,11 +21,14 @@
 - (instancetype)initWithURL:(NSURL *)URL;
 
 - (WRCWord *)insertWord;
-- (WRCQuizWord *)insertQuizWord;
 - (WRCWordDefinition *)insertWordDefinition;
+- (WRCQuizAnswer *)insertQuizAnswerWithActualWordDefinition:(WRCWordDefinition *)actualWordDefinition pickedWordDefinitions:(NSSet *)pickedWordDefinitions;
+
+- (void)removeWord:(WRCWord *)word;
 
 - (WRCWord *)wordWithWordString:(NSString *)word;
 
+- (NSArray *)objectsForFetchRequest:(NSFetchRequest *)fetchRequest;
 - (NSArray *)wordsMatchingPredicate:(NSPredicate *)predicate;
 - (NSArray *)wordsNotSynonymOfWordWithDefinition:(WRCWordDefinition *)definition;
 - (NSUInteger)countForWordsMatchingPredicate:(NSPredicate *)predicate;
@@ -35,6 +40,21 @@
 - (NSArray *)randomWordsNotIncludingWord:(WRCWord *)word count:(NSInteger)count;
 
 - (BOOL)containsWord:(NSString *)word;
+
+- (NSFetchedResultsController *)fetchedResultsControllerWithFetchRequest:(NSFetchRequest *)fetchRequest
+                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                               cacheName:(NSString *)cacheName;
+
+- (NSFetchRequest *)wordFetchRequest;
+- (NSFetchRequest *)wordDefinitionFetchRequest;
+- (NSFetchRequest *)quizAnswerFetchRequest;
+
+- (NSPredicate *)lastMissedQuizAnswersPredicate;
+
+- (WRCWordDefinition *)wordDefinitionDueForQuizzing;
+- (NSArray *)wordDefinitionsDueForQuizzingWithMaxCount:(NSUInteger)count;
+- (NSDate *)nextQuizDateForWordDefinition:(WRCWordDefinition *)wordDefinition;
+- (WRCWordDefinition *)wordDefinitionWithEarliestQuizDateInFuture;
 
 - (BOOL)save;
 - (BOOL)save:(NSError **)error;

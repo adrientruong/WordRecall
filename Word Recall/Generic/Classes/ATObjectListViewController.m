@@ -7,6 +7,7 @@
 //
 
 #import "ATObjectListViewController.h"
+#import "ATObjectTableViewProvider.h"
 
 @interface ATObjectListViewController ()
 
@@ -14,7 +15,7 @@
 
 @property (nonatomic, strong, readwrite) UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *objectsSortedBySection;
+@property (nonatomic, strong, readwrite) ATObjectTableViewProvider *tableViewProvider;
 
 @end
 
@@ -29,7 +30,6 @@
     
     if (self != nil) {
         
-        _objects = [NSSet set];
         
     }
     
@@ -50,8 +50,13 @@
     
     self.tableView = self.tableViewController.tableView;
     
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    self.tableViewProvider = [[[self tableViewProviderClass] alloc] init];
+    self.tableViewProvider.delegate = self;
+    
+    [self didCreateTableViewProvider];
+    
+    self.tableView.dataSource = self.tableViewProvider;
+    self.tableView.delegate = self.tableViewProvider;
     
     if (self.showsRefreshControl) {
         
@@ -67,11 +72,24 @@
     
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(_tableView);
+    id <UILayoutSupport> topLayoutGuide = self.topLayoutGuide;
+    id <UILayoutSupport> bottomLayoutGuide = self.bottomLayoutGuide;
     
+    NSDictionary *views = NSDictionaryOfVariableBindings(_tableView, topLayoutGuide, bottomLayoutGuide);
+
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_tableView]|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_tableView]|" options:0 metrics:nil views:views]];
-    
+
+    if (self.navigationController == nil || self.navigationController.navigationBarHidden) {
+     
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][_tableView][bottomLayoutGuide]" options:0 metrics:nil views:views]];
+        
+    }
+    else {
+        
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_tableView]|" options:0 metrics:nil views:views]];
+
+    }
+        
     if (self.isRefreshing) {
         
         [self beginRefreshing];
@@ -86,6 +104,69 @@
     [super viewWillAppear:animated];
     
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    
+}
+
+- (void)viewDidLayoutSubviews
+{
+    
+    [super viewDidLayoutSubviews];
+    
+    if (self.navigationController != nil && self.navigationController.navigationBarHidden == NO) {
+     
+        id <UILayoutSupport> topLayoutGuide = self.topLayoutGuide;
+        id <UILayoutSupport> bottomLayoutGuide = self.bottomLayoutGuide;
+        
+        self.tableView.contentInset = UIEdgeInsetsMake([topLayoutGuide length], 0, [bottomLayoutGuide length], 0);
+        
+    }
+    
+}
+
+#pragma mark - ATTableViewDataSource
+
+- (Class)tableViewProviderClass
+{
+    
+    return [ATObjectTableViewProvider class];
+    
+}
+
+- (void)didCreateTableViewProvider
+{
+    
+    
+    
+}
+
+- (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource configureCell:(UITableViewCell *)cell forObject:(id)object
+{
+    
+    
+    
+}
+
+- (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource didSelectObject:(id)object
+{
+    
+    if ([self shouldPushDetailViewControllerAutomatically]) {
+        
+        UIViewController *detailController = [self detailViewControllerForObject:object];
+        
+        if ([self shouldPresentDetailViewControllerModally]) {
+            
+            UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailController];
+            
+            [self presentViewController:detailNavigationController animated:YES completion:nil];
+            
+        }
+        else {
+            
+            [self.navigationController pushViewController:detailController animated:YES];
+            
+        }
+        
+    }
     
 }
 
@@ -148,34 +229,25 @@
 - (void)reloadTableView
 {
     
-    self.objectsSortedBySection = [NSMutableArray array];
-
-    if ([self.objects count] > 0) {
-        
-        [self.noObjectsView removeFromSuperview];
+    [self.tableView reloadData];
     
-        NSArray *sortedObjects = [self sortObjectsIntoSections:self.objects];
+    if ([self.tableViewProvider numberOfSections] == 0) {
         
-        for (NSArray *array in sortedObjects) {
-            
-            NSMutableArray *mutableArray = [array mutableCopy];
-            
-            [self.objectsSortedBySection addObject:mutableArray];
-            
-        }
+        [self addNoObjectViewIfNeeded];
         
     }
-    
-    [self addNoObjectViewIfNeeded];
-    
-    [self.tableView reloadData];
+    else {
+        
+        [self.noObjectsView removeFromSuperview];
+        
+    }
     
 }
 
 - (void)addNoObjectViewIfNeeded
 {
     
-    if (self.noObjectsView != nil && self.isRefreshing == NO) {
+    if (self.noObjectsView != nil && self.isRefreshing == NO && self.noObjectsView.superview != self.view) {
         
         [self.view addSubview:self.noObjectsView];
         
@@ -190,336 +262,10 @@
     
 }
 
-- (NSArray *)sortObjectsIntoSections:(NSSet *)objects
-{
-    
-    return @[[objects allObjects]];
-    
-}
-
-- (NSMutableArray *)objectsForSection:(NSInteger)section
-{
-    
-    return [self.objectsSortedBySection objectAtIndex:section];
-    
-}
-
-- (id)objectForIndexPath:(NSIndexPath *)indexPath
-{
-    
-    NSArray *objects = [self objectsForSection:indexPath.section];
-    
-    if ([objects count] >= indexPath.row + 1) {
-
-        return [objects objectAtIndex:indexPath.row];
-        
-    }
-    else {
-        
-        return nil;
-        
-    }
-    
-}
-
-- (NSIndexPath *)indexPathForObject:(id)object
-{
-    
-    NSIndexPath *indexPath = nil;
-    
-    for (int sectionNumber = 0; sectionNumber < [self.tableView numberOfSections]; sectionNumber++) {
-        
-        NSArray *objectsInSection = [self objectsForSection:sectionNumber];
-        
-        int rowNumber = [objectsInSection indexOfObject:object];
-        
-        if (rowNumber != NSNotFound) {
-            
-            indexPath = [NSIndexPath indexPathForRow:rowNumber inSection:sectionNumber];
-            
-            break;
-            
-        }
-        
-    }
-    
-    return indexPath;
-    
-}
-
 - (UITableViewStyle)tableViewStyle
 {
     
     return UITableViewStylePlain;
-    
-}
-
-- (UIView *)newSectionHeaderViewWithReuseIdentifier:(NSString *)identifier
-{
-    
-    return nil;
-    
-}
-
-- (UIView *)newSectionFooterViewWithReuseIdentifier:(NSString *)identifier
-{
-    
-    return nil;
-    
-}
-
-- (NSString *)headerTextForSectionContainingObject:(id)object
-{
-    
-    return nil;
-    
-}
-
-- (NSString *)footerTextForSectionContainingObject:(id)object
-{
-    
-    return nil;
-    
-}
-
-- (UITableViewCell *)newCellWithReuseIdentifier:(NSString *)identifier
-{
-    
-    return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    
-}
-
-- (void)configureCell:(UITableViewCell *)cell forObject:(id)object
-{
-    
-    
-    
-}
-
-- (void)tableViewDidSelectObject:(id)object
-{
-    
-    
-    
-}
-
-- (void)tableViewWillDeleteObject:(id)object
-{
-    
-    
-    
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    
-    return [self.objectsSortedBySection count];
-    
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    NSArray *objectsForSection = [self objectsForSection:section];
-    
-    return [objectsForSection count];
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    
-    if ([self tableView:tableView titleForHeaderInSection:section]) {
-        
-        return UITableViewAutomaticDimension;
-        
-    }
-    
-    return 0;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    
-    if ([self tableView:tableView titleForFooterInSection:section]) {
-        
-        return UITableViewAutomaticDimension;
-        
-    }
-    
-    return 0;
-    
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    
-    static NSString *HeaderViewIdentifier = @"HeaderView";
-    
-    UIView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
-    
-    if (headerView == nil) {
-        
-        headerView = [self newSectionHeaderViewWithReuseIdentifier:HeaderViewIdentifier];
-        
-    }
-    
-    return headerView;
-    
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    
-    static NSString *HeaderViewIdentifier = @"FooterView";
-    
-    UIView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
-    
-    if (footerView == nil) {
-        
-        footerView = [self newSectionFooterViewWithReuseIdentifier:HeaderViewIdentifier];
-        
-    }
-    
-    return footerView;
-
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    
-    id object = [self objectForIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    
-    return [self headerTextForSectionContainingObject:object];
-    
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
-    
-    id object = [self objectForIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    
-    return [self footerTextForSectionContainingObject:object];
-    
-}
-
-- (NSString *)cellReuseIdentifierForObject:(id)object atIndexPath:(NSIndexPath *)indexPath
-{
-    
-    return @"Object";
-    
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    id object = [self objectForIndexPath:indexPath];
-
-    NSString *cellReuseIdentifier = [self cellReuseIdentifierForObject:object atIndexPath:indexPath];
-        
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
-    
-    if (cell == nil) {
-        
-        cell = [self newCellWithReuseIdentifier:cellReuseIdentifier];
-        
-    }
-        
-    [self configureCell:cell forObject:object];
-    
-    return cell;
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    id object = [self objectForIndexPath:indexPath];
-    
-    [self tableViewDidSelectObject:object];
-    
-    if ([self shouldPushDetailViewControllerAutomatically]) {
-        
-        UIViewController *detailController = [self detailViewControllerForObject:object];
-        
-        if ([self shouldPresentDetailViewControllerModally]) {
-            
-            UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailController];
-            
-            [self presentViewController:detailNavigationController animated:YES completion:nil];
-            
-        }
-        else {
-            
-            [self.navigationController pushViewController:detailController animated:YES];
-            
-        }
-
-    }
-    
-}
-
-- (UITableViewCellEditingStyle)editingStyleForCellContainingObject:(id)object
-{
-    
-    return UITableViewCellEditingStyleNone;
-    
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    id object = [self objectForIndexPath:indexPath];
-    
-    return [self editingStyleForCellContainingObject:object];
-    
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        id object = [self objectForIndexPath:indexPath];
-        
-        [self tableViewWillDeleteObject:object];
-        
-        NSMutableArray *objectsForSection = [self objectsForSection:indexPath.section];
-        
-        [objectsForSection removeObjectAtIndex:indexPath.row];
-        
-        if ([objectsForSection count] == 0) {
-            
-            [self.objectsSortedBySection removeObjectAtIndex:indexPath.section];
-            
-            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
-            
-        }
-        else {
-            
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-
-        }
-        
-    }
-    
-}
-
-#pragma mark - Setting Objects
-
-- (void)setObjects:(NSSet *)objects
-{
-    
-    _objects = objects;
-    
-    if (_objects == nil) {
-        
-        _objects = [NSSet set];
-        
-    }
-    
-    [self reloadTableView];
     
 }
 
@@ -633,9 +379,11 @@
 - (void)setNoObjectsView:(UIView *)noObjectsView
 {
     
+    [self.noObjectsView removeFromSuperview];
+    
     _noObjectsView = noObjectsView;
     
-    if (self.isViewLoaded) {
+    if (self.isViewLoaded && [self.tableViewProvider numberOfSections] == 0) {
         
         [self addNoObjectViewIfNeeded];
         

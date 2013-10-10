@@ -12,6 +12,5 @@
 
 @property (nonatomic, copy) NSString *word;
 @property (nonatomic, strong) NSArray *definitions;
-@property (nonatomic, copy) NSString *exampleSentence;
 
 @end

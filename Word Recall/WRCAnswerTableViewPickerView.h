@@ -8,10 +8,10 @@
 
 #import "ATTableViewPickerView.h"
 
-@class WRCQuizWord;
+@class WRCWordDefinition;
 
-@interface WRCWordDefinitionTableViewPickerView : ATTableViewPickerView
+@interface WRCAnswerTableViewPickerView : ATTableViewPickerView
 
-@property (nonatomic, strong) WRCQuizWord *correctWord;
+@property (nonatomic, strong) id correctAnswer;
 
 @end

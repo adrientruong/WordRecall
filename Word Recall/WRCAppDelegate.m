@@ -12,10 +12,12 @@
 #import "GOOWordDefinition.h"
 #import "ATObjectStore.h"
 #import "NSURL+SystemDirectories.h"
-#import "WRCQuizWord.h"
+#import "WRCWord.h"
 #import "WRCQuizViewController.h"
 #import "WRCWordStore.h"
 #import "WRCWordDefinition.h"
+#import "WRCWordListViewController.h"
+#import "WRCWordDefinition+Custom.h"
 
 @interface WRCAppDelegate ()
 
@@ -34,7 +36,13 @@
 
     WRCQuizViewController *quizViewController = [[WRCQuizViewController alloc] init];
     
-    self.window.rootViewController = quizViewController;
+    WRCWordListViewController *quizWordListViewController = [[WRCWordListViewController alloc] init];
+    UINavigationController *quizWordListNavigationController = [[UINavigationController alloc] initWithRootViewController:quizWordListViewController];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:@[quizViewController, quizWordListNavigationController]];
+    
+    self.window.rootViewController = tabBarController;
     
     [self setupWordStore];
     
@@ -43,6 +51,7 @@
     [self addNewWordsIfNeccessaryWithCompletionHandler:^{
         
         quizViewController.wordStore = [weakSelf wordStore];
+        quizWordListViewController.wordStore = [weakSelf wordStore];
         
     }];
     
@@ -143,25 +152,7 @@
         
         NSMutableArray *words = [NSMutableArray array];
         
-        BOOL wordAlreadyInStore = NO;
-        
-        for (NSString *wordString in wordStrings) {
-            
-            wordAlreadyInStore = [self.wordStore containsWord:wordString];
-            
-            if (wordAlreadyInStore) {
-                
-                break;
-                
-            }
-            
-            WRCQuizWord *word = [self.wordStore insertQuizWord];
-            
-            word.word = wordString;
-            
-            [words addObject:word];
-            
-        }
+        BOOL wordAlreadyInStore = [self.wordStore containsWord:[wordStrings firstObject]];
         
         if (wordAlreadyInStore) {
             
@@ -178,18 +169,36 @@
         }
         else {
             
+            for (NSString *wordString in wordStrings) {
+
+                WRCWord *word = [self.wordStore insertWord];
+                
+                word.word = wordString;
+                
+                [words addObject:word];
+
+            }
+            
             [insertedCombinedWordStrings addObject:combinedWordString];
             
         }
         
+        NSDictionary *partOfSpeechConversion = @{GOOPartOfSpeechAdjective : @(WRCWordPartOfSpeechAdjective), GOOPartOfSpeechNoun : @(WRCWordPartOfSpeechNoun), GOOPartOfSpeechVerb : @(WRCWordPartOfSpeechVerb)};
+
         for (NSInteger i = 0; i < [wordStrings count]; i++) {
             
-            WRCQuizWord *word = words[i];
+            WRCWord *word = words[i];
             
             GOOWordInfoSearch *search = [[GOOWordInfoSearch alloc] initWithWord:word.word];
             
             [search startWithCompletionHandler:^(GOOWordInfo *googleWordInfo, NSError *error) {
               
+                if (googleWordInfo == nil) {
+                    
+                    NSLog(@"Error occured:%@ for word:%@", [error userInfo], word.word);
+                    
+                }
+                
                 for (GOOWordDefinition *googleWordDefinition in googleWordInfo.definitions) {
                     
                     WRCWordDefinition *wordDefinition = [self.wordStore insertWordDefinition];
@@ -199,8 +208,21 @@
                     wordDefinition.definition = googleWordDefinition.definition;
                     wordDefinition.exampleSentence = [googleWordDefinition.exampleSentences firstObject];
                     
+                    wordDefinition.partOfSpeech = [partOfSpeechConversion[googleWordDefinition.partOfSpeech] integerValue];
+                    
+                    wordDefinition.pronunciationAudioURLString = [googleWordDefinition.pronunciationAudioURL absoluteString];
+                    
                 }
                 
+                if ([googleWordInfo.definitions count] == 0) {
+                    
+                    NSLog(@"Missing definition for word:%@", word.word);
+                    
+                    [self.wordStore removeWord:word];
+                    [insertedCombinedWordStrings removeObject:combinedWordString];
+                    
+                }
+                                
                 completions++;
                 
                 if (completions == neededCompletions) {

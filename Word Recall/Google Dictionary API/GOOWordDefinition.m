@@ -8,6 +8,10 @@
 
 #import "GOOWordDefinition.h"
 
+NSString *const GOOPartOfSpeechAdjective = @"Adjective";
+NSString *const GOOPartOfSpeechNoun = @"Noun";
+NSString *const GOOPartOfSpeechVerb = @"Verb";
+
 @implementation GOOWordDefinition
 
 @end

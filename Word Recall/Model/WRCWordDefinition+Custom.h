@@ -18,4 +18,6 @@ typedef NS_ENUM(NSInteger, WRCWordPartOfSpeech) {
 
 @interface WRCWordDefinition (Custom)
 
+- (NSURL *)pronunciationAudioURL;
+
 @end

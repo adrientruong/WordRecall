@@ -6,10 +6,9 @@
 //  Copyright (c) 2013 Adrien Truong. All rights reserved.
 //
 
-#import "WRCWordDefinitionTableViewPickerView.h"
-#import "WRCQuizWord.h"
+#import "WRCAnswerTableViewPickerView.h"
 
-@implementation WRCWordDefinitionTableViewPickerView
+@implementation WRCAnswerTableViewPickerView
 
 - (void)configureCell:(UITableViewCell *)cell forItem:(id)item selected:(BOOL)isSelected
 {
@@ -18,9 +17,7 @@
     
     if (isSelected) {
         
-        WRCWord *word = item;
-        
-        if ([word isEqual:self.correctWord] == NO) {
+        if ([item isEqual:self.correctAnswer] == NO) {
             
             cell.textLabel.textColor = [UIColor redColor];
             

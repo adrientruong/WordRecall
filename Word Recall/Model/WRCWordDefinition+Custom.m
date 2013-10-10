@@ -10,4 +10,13 @@
 
 @implementation WRCWordDefinition (Custom)
 
+- (NSURL *)pronunciationAudioURL
+{
+    
+    NSURL *URL = [NSURL URLWithString:self.pronunciationAudioURLString];
+    
+    return URL;
+    
+}
+
 @end

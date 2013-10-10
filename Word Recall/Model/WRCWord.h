@@ -2,7 +2,7 @@
 //  WRCWord.h
 //  Word Recall
 //
-//  Created by Adrien Truong on 9/28/13.
+//  Created by Adrien Truong on 10/4/13.
 //  Copyright (c) 2013 Adrien Truong. All rights reserved.
 //
 
@@ -14,6 +14,8 @@
 @interface WRCWord : NSManagedObject
 
 @property (nonatomic, retain) NSString * word;
+@property (nonatomic, retain) NSString * wordInitial;
+@property (nonatomic) int32_t quizDefinitionIndex;
 @property (nonatomic, retain) NSOrderedSet *definitions;
 @end
 
