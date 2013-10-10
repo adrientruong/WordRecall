@@ -37,6 +37,8 @@
 		7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4227D817EE14D700E90387 /* GOOWordInfoSearch.m */; };
 		7AB6AEC8180110F7005647B3 /* WRCWordDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AEC7180110F7005647B3 /* WRCWordDefinition.m */; };
 		7AB6AECA180112E3005647B3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB6AEC9180112E3005647B3 /* AVFoundation.framework */; };
+		7AD133871806798B00B47B01 /* NSObject+KeyPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD133861806798B00B47B01 /* NSObject+KeyPaths.m */; };
+		7AD1338D18067BEA00B47B01 /* NSString+StringWithFormatExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1338C18067BEA00B47B01 /* NSString+StringWithFormatExtension.m */; };
 		7AE8594F17F7488E0089BD9B /* GOOWordDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8594E17F7488E0089BD9B /* GOOWordDefinition.m */; };
 		7AE8596517F7DB980089BD9B /* ATObjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8596317F7DB980089BD9B /* ATObjectListViewController.m */; };
 		7AE8596817F7DFC10089BD9B /* ATObjectTableViewProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE8596717F7DFC10089BD9B /* ATObjectTableViewProvider.m */; };
@@ -116,6 +118,10 @@
 		7AB6AEC6180110F7005647B3 /* WRCWordDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCWordDefinition.h; sourceTree = "<group>"; };
 		7AB6AEC7180110F7005647B3 /* WRCWordDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCWordDefinition.m; sourceTree = "<group>"; };
 		7AB6AEC9180112E3005647B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7AD133851806798B00B47B01 /* NSObject+KeyPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KeyPaths.h"; sourceTree = "<group>"; };
+		7AD133861806798B00B47B01 /* NSObject+KeyPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KeyPaths.m"; sourceTree = "<group>"; };
+		7AD1338B18067BEA00B47B01 /* NSString+StringWithFormatExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringWithFormatExtension.h"; sourceTree = "<group>"; };
+		7AD1338C18067BEA00B47B01 /* NSString+StringWithFormatExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringWithFormatExtension.m"; sourceTree = "<group>"; };
 		7AE8594D17F7488E0089BD9B /* GOOWordDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOOWordDefinition.h; sourceTree = "<group>"; };
 		7AE8594E17F7488E0089BD9B /* GOOWordDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOOWordDefinition.m; sourceTree = "<group>"; };
 		7AE8596217F7DB980089BD9B /* ATObjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATObjectListViewController.h; sourceTree = "<group>"; };
@@ -350,6 +356,10 @@
 				7AF0586717EE587700BEADD1 /* NSArray+RandomObject.m */,
 				7A0CF47F17F6970E004CA3CE /* NSManagedObjectContext+RandomObject.h */,
 				7A0CF48017F6970E004CA3CE /* NSManagedObjectContext+RandomObject.m */,
+				7AD133851806798B00B47B01 /* NSObject+KeyPaths.h */,
+				7AD133861806798B00B47B01 /* NSObject+KeyPaths.m */,
+				7AD1338B18067BEA00B47B01 /* NSString+StringWithFormatExtension.h */,
+				7AD1338C18067BEA00B47B01 /* NSString+StringWithFormatExtension.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -507,6 +517,7 @@
 				7A0CF47B17F6961B004CA3CE /* WRCWordStore.m in Sources */,
 				7A4227DA17EE14D700E90387 /* GOOWordInfoSearch.m in Sources */,
 				7AF0586517EE563F00BEADD1 /* NSArray+Shuffle.m in Sources */,
+				7AD133871806798B00B47B01 /* NSObject+KeyPaths.m in Sources */,
 				7AE8597117F816390089BD9B /* WRCWordListViewController.m in Sources */,
 				7A0CF48417F6A4C8004CA3CE /* WRCWordDefinition+Custom.m in Sources */,
 				7A1D39B017FFC6CA0033C48E /* WRCWord.m in Sources */,
@@ -516,6 +527,7 @@
 				7A0F4F6B17FFCBFB00A733B4 /* WRCQuizAnswer+Custom.m in Sources */,
 				7A1D39B317FFC70C0033C48E /* WRCWord+Custom.m in Sources */,
 				7AF0583717EE1F8800BEADD1 /* GOOJSONPResponseSerializer.m in Sources */,
+				7AD1338D18067BEA00B47B01 /* NSString+StringWithFormatExtension.m in Sources */,
 				7AE8596517F7DB980089BD9B /* ATObjectListViewController.m in Sources */,
 				7AB6AEC8180110F7005647B3 /* WRCWordDefinition.m in Sources */,
 			);

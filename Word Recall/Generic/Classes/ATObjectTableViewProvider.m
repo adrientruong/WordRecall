@@ -7,6 +7,8 @@
 //
 
 #import "ATObjectTableViewProvider.h"
+#import "NSObject+KeyPaths.h"
+#import "NSString+StringWithFormatExtension.h"
 
 @implementation ATObjectTableViewProvider
 
@@ -173,6 +175,34 @@
     
 }
 
+- (NSString *)stringFromFormat:(NSString *)format withObjectKeyPaths:(NSArray *)keyPaths object:(id)object
+{
+    
+    NSArray *values = [object arrayWithValuesForKeyPaths:keyPaths];
+    
+    NSMutableArray *nonNullValues = [NSMutableArray arrayWithCapacity:[values count]];
+    
+    for (id value in values) {
+        
+        id nonNullValue = value;
+        
+        if (value == [NSNull null]) {
+            
+            nonNullValue = @"";
+            
+        }
+        
+        [nonNullValues addObject:nonNullValue];
+        
+    }
+    
+    NSString *text = [NSString stringWithFormat:format argumentsArray:nonNullValues];
+    
+    return text;
+    
+}
+
+
 #pragma mark - UITableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -279,6 +309,18 @@
     if (cell == nil) {
         
         cell = [self newCellWithReuseIdentifier:cellReuseIdentifier];
+        
+    }
+    
+    if ([self.cellTextLabelTextFormat length] > 0) {
+        
+        cell.textLabel.text = [self stringFromFormat:self.cellTextLabelTextFormat withObjectKeyPaths:self.cellTextLabelTextFormatKeyPaths object:object];
+        
+    }
+    
+    if ([self.cellDetailTextLabelTextFormat length] > 0) {
+        
+        cell.detailTextLabel.text = [self stringFromFormat:self.cellDetailTextLabelTextFormat withObjectKeyPaths:self.cellDetailTextLabelTextFormatKeyPaths object:object];
         
     }
     

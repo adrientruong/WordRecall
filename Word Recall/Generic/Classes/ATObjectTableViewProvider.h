@@ -15,6 +15,11 @@
 @property (nonatomic, weak) id <ATObjectTableViewProviderDelegate> delegate;
 @property (nonatomic, copy) NSString *cellReuseIdentifier;
 
+@property (nonatomic, copy) NSString *cellTextLabelTextFormat;
+@property (nonatomic, copy) NSString *cellDetailTextLabelTextFormat;
+@property (nonatomic, copy) NSArray *cellTextLabelTextFormatKeyPaths;
+@property (nonatomic, copy) NSArray *cellDetailTextLabelTextFormatKeyPaths;
+
 //subclasses MUST override
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfObjectsForSection:(NSInteger)section;
@@ -38,15 +43,12 @@
 - (NSString *)tableViewProvider:(ATObjectTableViewProvider *)dataSource footerTextForSectionContainingObject:(id)object;
 
 - (NSString *)tableViewProvider:(ATObjectTableViewProvider *)dataSource cellReuseIdentifierForObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
-
 - (UITableViewCell *)tableViewProvider:(ATObjectTableViewProvider *)dataSource newCellWithReuseIdentifier:(NSString *)identifier;
+- (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource configureCell:(UITableViewCell *)cell forObject:(id)object;
 
 - (UITableViewCellEditingStyle)tableViewProvider:(ATObjectTableViewProvider *)dataSource editingStyleForCellForObject:(id)object;
 - (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource willDeleteObject:(id)object;
 
 - (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource didSelectObject:(id)object;
-
-@required
-- (void)tableViewProvider:(ATObjectTableViewProvider *)dataSource configureCell:(UITableViewCell *)cell forObject:(id)object;
 
 @end
