@@ -14,6 +14,7 @@
 #import "WRCWord.h"
 #import "WRCWord+Custom.h"
 #import "WRCQuizAnswer.h"
+#import "WRCWordViewController.h"
 
 @interface WRCWordListViewController ()
 
@@ -171,6 +172,18 @@
     cell.textLabel.text = word.word;
     
     cell.detailTextLabel.text = [word quizDefinition].definition;
+    
+}
+
+- (UIViewController *)detailViewControllerForObject:(id)object
+{
+    
+    WRCWordViewController *wordViewController = [[WRCWordViewController alloc] init];
+    
+    wordViewController.wordStore = self.wordStore;
+    wordViewController.word = object;
+    
+    return wordViewController;
     
 }
 
