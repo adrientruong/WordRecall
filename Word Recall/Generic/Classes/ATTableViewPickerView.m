@@ -20,6 +20,8 @@
 
 @implementation ATTableViewPickerView
 
+#pragma mark - Init
+
 - (id)initWithFrame:(CGRect)frame
 {
     
@@ -27,25 +29,47 @@
     
     if (self != nil) {
         
-        self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
-        
-        self.tableView.dataSource = self;
-        self.tableView.delegate = self;
-        
-        [self addSubview:self.tableView];
-        
-        self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        NSDictionary *views = NSDictionaryOfVariableBindings(_tableView);
-        
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_tableView]|" options:0 metrics:nil views:views]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_tableView]|" options:0 metrics:nil views:views]];
-        
-        self.selectedItemsTextColor = self.tintColor;
+        [self commonInit];
         
     }
     
     return self;
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self != nil) {
+        
+        [self commonInit];
+        
+    }
+    
+    return self;
+    
+}
+
+- (void)commonInit
+{
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.frame style:UITableViewStyleGrouped];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self addSubview:self.tableView];
+    
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(_tableView);
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_tableView]|" options:0 metrics:nil views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_tableView]|" options:0 metrics:nil views:views]];
+    
+    self.selectedItemsTextColor = self.tintColor;
     
 }
 
