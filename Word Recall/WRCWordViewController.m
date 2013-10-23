@@ -49,6 +49,8 @@
     
     self.tableViewPickerView.items = [self.word.definitions array];
     self.tableViewPickerView.selectedItems = @[[self.word quizDefinition]];
+    self.tableViewPickerView.maximumNumberOfSelections = 1;
+    self.tableViewPickerView.minimumNumberOfSelections = 1;
     
 }
 
