@@ -45,13 +45,35 @@
     
     if (self != nil) {
         
-        self.answerChoicesCount = 5;
-        
-        self.title = NSLocalizedString(@"Quiz", @"");
+        [self commonInit];
        
     }
     
     return self;
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self != nil) {
+        
+        [self commonInit];
+        
+    }
+    
+    return self;
+    
+}
+
+- (void)commonInit
+{
+    
+    self.answerChoicesCount = 5;
+    
+    self.title = NSLocalizedString(@"Quiz", @"");
     
 }
 

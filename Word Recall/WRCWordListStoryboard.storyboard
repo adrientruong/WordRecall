@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="J7l-z3-J7q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SfE-Sv-Miy">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="J7l-z3-J7q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7H1-yW-l0e">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qUS-Bx-W1q" kind="relationship" relationship="rootViewController" id="7UZ-z9-kA2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syK-Fq-Kos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="-15"/>
+        </scene>
+        <!--Word List View Controller-->
+        <scene sceneID="vq7-QF-XJp">
+            <objects>
+                <viewController id="qUS-Bx-W1q" customClass="WRCWordListViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="If7-Om-nxm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ux-Mo-ZCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="25"/>
+        </scene>
+        <!--Word View Controller - Word Info-->
+        <scene sceneID="naS-4f-iGa">
+            <objects>
+                <viewController storyboardIdentifier="WRCWordViewController" title="Word Info" id="uyB-of-hdx" customClass="WRCWordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jpg-vX-EzO"/>
+                        <viewControllerLayoutGuide type="bottom" id="P71-aF-KlE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDk-4a-ozY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Quiz Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxV-fx-0kf">
+                                <rect key="frame" x="20" y="105" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/20/13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iQ-Q6-n5q">
+                                <rect key="frame" x="149" y="105" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-fr-ZLc" customClass="ATTableViewPickerView">
+                                <rect key="frame" x="0.0" y="146" width="320" height="422"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="tableViewPickerViewValueDidChange:" destination="uyB-of-hdx" eventType="valueChanged" id="ZCR-7O-QOl"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYe-8e-BNa">
+                                <rect key="frame" x="0.0" y="69" width="320" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7iQ-Q6-n5q" firstAttribute="leading" secondItem="gxV-fx-0kf" secondAttribute="trailing" constant="8" id="8dk-jX-C5Z"/>
+                            <constraint firstAttribute="trailing" secondItem="ezI-fr-ZLc" secondAttribute="trailing" id="Ej3-xz-T3N"/>
+                            <constraint firstItem="ezI-fr-ZLc" firstAttribute="leading" secondItem="SDk-4a-ozY" secondAttribute="leading" id="OFl-fn-ePR"/>
+                            <constraint firstItem="gxV-fx-0kf" firstAttribute="leading" secondItem="SDk-4a-ozY" secondAttribute="leading" constant="20" id="WP1-ZO-QMR"/>
+                            <constraint firstAttribute="trailing" secondItem="uYe-8e-BNa" secondAttribute="trailing" id="et3-rI-VPx"/>
+                            <constraint firstItem="7iQ-Q6-n5q" firstAttribute="top" secondItem="uYe-8e-BNa" secondAttribute="bottom" constant="8" id="oHQ-9V-DGd"/>
+                            <constraint firstItem="P71-aF-KlE" firstAttribute="top" secondItem="ezI-fr-ZLc" secondAttribute="bottom" id="pUx-ic-8AC"/>
+                            <constraint firstItem="uYe-8e-BNa" firstAttribute="leading" secondItem="SDk-4a-ozY" secondAttribute="leading" id="rKq-l2-4F6"/>
+                            <constraint firstItem="uYe-8e-BNa" firstAttribute="top" secondItem="Jpg-vX-EzO" secondAttribute="bottom" constant="5" id="tAw-Dh-Awf"/>
+                            <constraint firstItem="ezI-fr-ZLc" firstAttribute="top" secondItem="gxV-fx-0kf" secondAttribute="bottom" constant="20" id="v40-5O-8KC"/>
+                            <constraint firstItem="ezI-fr-ZLc" firstAttribute="top" secondItem="7iQ-Q6-n5q" secondAttribute="bottom" constant="20" id="y1Y-3a-lrh"/>
+                        </constraints>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                        <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="nextQuizDateLabel" destination="7iQ-Q6-n5q" id="Zd4-CA-YEq"/>
+                        <outlet property="tableViewPickerView" destination="ezI-fr-ZLc" id="fOB-uq-Ox1"/>
+                        <outlet property="wordLabel" destination="uYe-8e-BNa" id="QLl-oG-iLV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIg-IA-OmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="19"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

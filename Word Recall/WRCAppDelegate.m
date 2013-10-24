@@ -34,10 +34,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-    WRCQuizViewController *quizViewController = [[WRCQuizViewController alloc] init];
+    UIStoryboard *quizStoryboard = [UIStoryboard storyboardWithName:@"WRCQuizStoryboard" bundle:nil];
     
-    WRCWordListViewController *quizWordListViewController = [[WRCWordListViewController alloc] init];
-    UINavigationController *quizWordListNavigationController = [[UINavigationController alloc] initWithRootViewController:quizWordListViewController];
+    WRCQuizViewController *quizViewController = [quizStoryboard instantiateInitialViewController];
+    
+    UIStoryboard *wordListStoryboard = [UIStoryboard storyboardWithName:@"WRCWordListStoryboard" bundle:nil];
+    
+    UINavigationController *quizWordListNavigationController = [wordListStoryboard instantiateInitialViewController];
+    WRCWordListViewController *quizWordListViewController = (WRCWordListViewController *)quizWordListNavigationController.topViewController;
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:@[quizViewController, quizWordListNavigationController]];

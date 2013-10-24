@@ -178,7 +178,7 @@
 - (UIViewController *)detailViewControllerForObject:(id)object
 {
     
-    WRCWordViewController *wordViewController = [[WRCWordViewController alloc] init];
+    WRCWordViewController *wordViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WRCWordViewController"];
     
     wordViewController.wordStore = self.wordStore;
     wordViewController.word = object;
