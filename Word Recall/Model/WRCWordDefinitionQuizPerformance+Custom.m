@@ -72,7 +72,7 @@
     
     NSUInteger correctAnswerStreakCount = 0;
     
-    for (NSInteger i = [self.answers count] - 1; i > 0; i--) {
+    for (NSInteger i = [self.answers count] - 1; i >= 0; i--) {
         
         WRCQuizAnswer *answer = self.answers[i];
         

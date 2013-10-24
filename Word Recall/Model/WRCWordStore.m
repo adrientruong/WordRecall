@@ -269,11 +269,11 @@
         
         WRCWord *randomWord = [self randomWordMatchingPredicate:compoundPredicate];
         
+        [randomWords addObject:randomWord];
+        
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (self == %@)", randomWord];
         
         compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[compoundPredicate, predicate]];
-        
-        [randomWords addObject:randomWord];
         
     }
     
