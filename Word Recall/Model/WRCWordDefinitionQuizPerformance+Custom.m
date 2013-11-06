@@ -38,39 +38,39 @@
 
 #pragma mark - Counts
 
-- (NSUInteger)incorrectAnswerCount
+- (NSInteger)incorrectAnswerCount
 {
     
     NSOrderedSet *incorrectAnswers = [self incorrectAnswers];
     
-    NSUInteger incorrectAnswerCount = [incorrectAnswers count];
+    NSInteger incorrectAnswerCount = [incorrectAnswers count];
     
     return incorrectAnswerCount;
     
 }
 
-- (NSUInteger)correctAnswerCount
+- (NSInteger)correctAnswerCount
 {
     
     NSOrderedSet *correctAnswers = [self correctAnswers];
     
-    NSUInteger correctAnswerCount = [correctAnswers count];
+    NSInteger correctAnswerCount = [correctAnswers count];
     
     return correctAnswerCount;
     
 }
 
-- (NSUInteger)totalAnswerCount
+- (NSInteger)totalAnswerCount
 {
     
     return [self.answers count];
     
 }
 
-- (NSUInteger)correctAnswerStreakCount
+- (NSInteger)correctAnswerStreakCount
 {
     
-    NSUInteger correctAnswerStreakCount = 0;
+    NSInteger correctAnswerStreakCount = 0;
     
     for (NSInteger i = [self.answers count] - 1; i >= 0; i--) {
         

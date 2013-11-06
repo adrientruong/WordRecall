@@ -359,11 +359,12 @@
 - (NSDate *)nextQuizDateForWordDefinition:(WRCWordDefinition *)wordDefinition
 {
     
-    NSUInteger hoursUntilNextdQuiz = MAX(6, [wordDefinition.quizPerformance correctAnswerStreakCount] * 24);
+    //days until next quiz = 5^(streak - 1)
+    NSInteger hoursUntilNextQuiz = lroundf(pow(5, [wordDefinition.quizPerformance correctAnswerStreakCount] - 1) * 24);
 
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     
-    dateComponents.hour = hoursUntilNextdQuiz;
+    dateComponents.hour = hoursUntilNextQuiz;
     
     NSDate *nextQuizDate = [self.calendar dateByAddingComponents:dateComponents toDate:[wordDefinition.quizPerformance lastAnswerDate] options:0];
     

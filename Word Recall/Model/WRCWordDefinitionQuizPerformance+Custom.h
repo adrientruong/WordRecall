@@ -16,10 +16,10 @@
 - (float)missPercentage;
 - (float)correctPercentage;
 
-- (NSUInteger)incorrectAnswerCount;
-- (NSUInteger)correctAnswerCount;
-- (NSUInteger)totalAnswerCount;
-- (NSUInteger)correctAnswerStreakCount;
+- (NSInteger)incorrectAnswerCount;
+- (NSInteger)correctAnswerCount;
+- (NSInteger)totalAnswerCount;
+- (NSInteger)correctAnswerStreakCount;
 
 - (NSArray *)incorrectWordDefinitionAssociations;
 
