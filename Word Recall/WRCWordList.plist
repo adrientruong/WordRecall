@@ -246,5 +246,193 @@
 	<string>conciliatory</string>
 	<string>despairing</string>
 	<string>inflammatory</string>
+	<string>lampoon</string>
+	<string>catalyst</string>
+	<string>caustic</string>
+	<string>crystallize</string>
+	<string>osmosis</string>
+	<string>sedentary</string>
+	<string>virulent</string>
+	<string>empirical</string>
+	<string>entomology</string>
+	<string>gestate</string>
+	<string>cathartic</string>
+	<string>paradigm</string>
+	<string>entrepreneur</string>
+	<string>lucrative</string>
+	<string>extravagant</string>
+	<string>avarice, cupidity</string>
+	<string>glut, plethora, surfeit</string>
+	<string>destitute, impoverished, indigent</string>
+	<string>affluent, opulent</string>
+	<string>munificent</string>
+	<string>parsimonious</string>
+	<string>depreciation</string>
+	<string>remunerate</string>
+	<string>accord</string>
+	<string>enlighten, edify</string>
+	<string>appeasement</string>
+	<string>nullify</string>
+	<string>triumvirate</string>
+	<string>pretext</string>
+	<string>watershed</string>
+	<string>consensus</string>
+	<string>autocrat, despot</string>
+	<string>manifesto</string>
+	<string>enfranchise</string>
+	<string>disenfranchise</string>
+	<string>coerce</string>
+	<string>egalitarian</string>
+	<string>demarcation</string>
+	<string>inquisition</string>
+	<string>ameliorate</string>
+	<string>exacerbate</string>
+	<string>desiccated</string>
+	<string>contiguous</string>
+	<string>pertinent</string>
+	<string>complicity</string>
+	<string>exonerate, exculpate</string>
+	<string>indisputable</string>
+	<string>precedent</string>
+	<string>unprecedented</string>
+	<string>malfeasance</string>
+	<string>probity</string>
+	<string>lambaste</string>
+	<string>quiescent</string>
+	<string>provisional</string>
+	<string>lurid</string>
+	<string>truculent, pugnacious, belligerent</string>
+	<string>propitiate</string>
+	<string>perfunctory</string>
+	<string>aplomb</string>
+	<string>opaque</string>
+	<string>craven</string>
+	<string>venal</string>
+	<string>licentious</string>
+	<string>noxious</string>
+	<string>superfluous, extraneous</string>
+	<string>duplicitous</string>
+	<string>profligate</string>
+	<string>epiphany</string>
+	<string>insidious</string>
+	<string>vacuous, inane</string>
+	<string>harbinger, portent, presage</string>
+	<string>beleaguer</string>
+	<string>burgeon</string>
+	<string>imperious</string>
+	<string>petulant, querulous</string>
+	<string>complaisant</string>
+	<string>fawning, obsequious</string>
+	<string>obdurate, intransigent</string>
+	<string>redolent, reminiscent</string>
+	<string>chicanery</string>
+	<string>conundrum</string>
+	<string>slight</string>
+	<string>capitulate</string>
+	<string>disheartening</string>
+	<string>apocryphal</string>
+	<string>magisterial</string>
+	<string>plastic, malleable, pliable</string>
+	<string>chagrin</string>
+	<string>obstreperous</string>
+	<string>idyllic</string>
+	<string>dilapidated</string>
+	<string>extemporize, improvise</string>
+	<string>myriad</string>
+	<string>ungainly</string>
+	<string>dilatory</string>
+	<string>vituperative</string>
+	<string>discordant</string>
+	<string>perfidy, perfidious</string>
+	<string>proliferate</string>
+	<string>indomitable, resolute</string>
+	<string>moribund</string>
+	<string>nuance</string>
+	<string>flippant, facetious</string>
+	<string>credulous</string>
+	<string>incredulous</string>
+	<string>florid</string>
+	<string>excoriating, scathing</string>
+	<string>interloper</string>
+	<string>cerebral</string>
+	<string>visceral</string>
+	<string>nonplussed, confounded</string>
+	<string>ignominious</string>
+	<string>euphony</string>
+	<string>cacophony</string>
+	<string>vacillate</string>
+	<string>timorous</string>
+	<string>narcissist</string>
+	<string>insolent, impudent</string>
+	<string>idiosyncrasy</string>
+	<string>censorious, captious</string>
+	<string>consternation</string>
+	<string>didactic</string>
+	<string>elucidate</string>
+	<string>effusive</string>
+	<string>prolific</string>
+	<string>furor</string>
+	<string>paranoia</string>
+	<string>marginal, peripheral</string>
+	<string>obfuscate</string>
+	<string>flummoxed</string>
+	<string>spate</string>
+	<string>ineffable</string>
+	<string>histrionic, overwrought</string>
+	<string>placate</string>
+	<string>eschew</string>
+	<string>stopgap</string>
+	<string>flotsam</string>
+	<string>jetsam</string>
+	<string>churlish, sullen, surly</string>
+	<string>restitution</string>
+	<string>disquieting</string>
+	<string>ornate</string>
+	<string>execrable, odious, repugnant</string>
+	<string>perspicacious, prescient, discerning</string>
+	<string>eclectic</string>
+	<string>hiatus</string>
+	<string>vertiginous</string>
+	<string>esoteric, arcane</string>
+	<string>supercilious</string>
+	<string>blithe</string>
+	<string>underwrite</string>
+	<string>discomfited</string>
+	<string>taciturn</string>
+	<string>sinecure</string>
+	<string>cosmopolitan</string>
+	<string>provincial, parochial, insular</string>
+	<string>lugubrious</string>
+	<string>fecund</string>
+	<string>ostentatious</string>
+	<string>guile</string>
+	<string>sanguine</string>
+	<string>scintillating</string>
+	<string>pristine</string>
+	<string>rampant</string>
+	<string>pernicious</string>
+	<string>oblivious</string>
+	<string>refractory</string>
+	<string>garrulous, verbose, loquacious, voluble</string>
+	<string>convivial</string>
+	<string>brusque, curt</string>
+	<string>tepid</string>
+	<string>protean</string>
+	<string>solicitous</string>
+	<string>ingenuous</string>
+	<string>disingenuous</string>
+	<string>venerate, revere</string>
+	<string>contentious</string>
+	<string>preclude</string>
+	<string>compunction, contrition, remorse, penitence</string>
+	<string>demography</string>
+	<string>aphorism, axiom</string>
+	<string>juxtapose, juxtaposition</string>
+	<string>bombastic</string>
+	<string>forbearance</string>
+	<string>unfettered</string>
+	<string>prescribe</string>
+	<string>proscribe</string>
+	<string>puerile, callow, sophomoric</string>
 </array>
 </plist>
