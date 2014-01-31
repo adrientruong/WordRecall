@@ -25,17 +25,6 @@
 
 @implementation WRCWordViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self != nil) {
-        
-    }
-    
-    return self;
-}
-
 - (void)updateViewForWord:(WRCWord *)word
 {
     self.wordLabel.text = word.word;
@@ -59,12 +48,6 @@
 - (IBAction)tableViewPickerViewValueDidChange:(ATTableViewPickerView *)pickerView
 {
     self.word.quizDefinitionIndex = [self.word.definitions indexOfObject:[pickerView.selectedItems firstObject]];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSDateFormatter *)dateFormatter
