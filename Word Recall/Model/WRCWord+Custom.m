@@ -12,15 +12,11 @@
 
 - (WRCWordDefinition *)quizDefinition
 {
-    
     if ((NSInteger)[self.definitions count] - 1 < self.quizDefinitionIndex) {
-        
         return nil;
-        
     }
     
     return self.definitions[self.quizDefinitionIndex];
-    
 }
 
 @end

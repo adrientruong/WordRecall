@@ -13,11 +13,9 @@
 
 - (BOOL)isCorrectOnFirstAttempt;
 {
-    
     BOOL isCorrect = ([[self.pickedWordDefinitions anyObject] isEqual:self.actualWordDefinition] && [self.pickedWordDefinitions count] == 1);
     
     return isCorrect;
-    
 }
 
 @end

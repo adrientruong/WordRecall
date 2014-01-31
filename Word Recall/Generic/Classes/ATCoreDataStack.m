@@ -22,11 +22,9 @@
 
 - (instancetype)initWithManagedObjectModelURL:(NSURL *)managedObjectModelURL storeURL:(NSURL *)storeURL
 {
-    
     self = [super init];
     
     if (self != nil) {
-        
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:managedObjectModelURL];
         
         NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -40,27 +38,20 @@
         NSPersistentStore *persistentStore = [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
         
         if (persistentStore == nil) {
-            
             NSLog(@"Something went wrong creating persistent store coordinator. Erro:%@", [error userInfo]);
-            
         }
         
         _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         _managedObjectContext.persistentStoreCoordinator = _persistentStoreCoordinator;
-        
         _managedObjectContext.undoManager = [[NSUndoManager alloc] init];
-        
     }
     
     return self;
-    
 }
 
 - (NSManagedObject *)insertNewObjectForEntityName:(NSString *)entityName;
 {
-    
     return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
-    
 }
 
 

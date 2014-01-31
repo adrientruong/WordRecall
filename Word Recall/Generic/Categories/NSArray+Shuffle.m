@@ -12,13 +12,10 @@
 
 - (instancetype)arrayByShuffling
 {
-    
     NSMutableArray *mutableArray = [self mutableCopy];
-    
     [mutableArray shuffle];
     
     return [mutableArray copy];
-    
 }
 
 @end
@@ -27,19 +24,13 @@
 
 - (void)shuffle
 {
-    
     NSUInteger count = [self count];
-    
     for (NSUInteger i = 0; i < count; ++i) {
-        
         NSInteger numberOfElements = count - i;
-        
         NSInteger randomIndex = arc4random_uniform(numberOfElements) + i;
-        
         [self exchangeObjectAtIndex:i withObjectAtIndex:randomIndex];
         
     }
-    
 }
 
 @end

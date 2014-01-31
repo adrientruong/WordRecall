@@ -12,13 +12,10 @@
 
 - (id)randomObject
 {
-    
     NSInteger randomIndex = arc4random_uniform([self count]);
-    
     id randomObject = self[randomIndex];
     
     return randomObject;
-    
 }
 
 @end

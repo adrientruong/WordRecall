@@ -12,34 +12,24 @@
 
 - (void)configureCell:(UITableViewCell *)cell forItem:(id)item selected:(BOOL)isSelected
 {
-    
     [super configureCell:cell forItem:item selected:isSelected];
     
     if (isSelected) {
-        
         if ([item isEqual:self.correctAnswer] == NO) {
-            
             cell.textLabel.textColor = [UIColor redColor];
             
             cell.detailTextLabel.text = @"X";
             cell.detailTextLabel.textColor = [UIColor redColor];
             
             cell.accessoryType = UITableViewCellAccessoryNone;
-            
         }
         else {
-            
             cell.detailTextLabel.text = nil;
-
         }
-        
     }
     else {
-        
         cell.detailTextLabel.text = nil;
-
     }
-    
 }
 
 @end
